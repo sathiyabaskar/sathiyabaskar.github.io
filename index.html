@@ -3,10 +3,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/index.css">
-    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
         :root{
-    --border-light: 2px solid black;
+    --border-light: 1px solid black;
     --boxes-width: 800px;
     --box-width: 500px;
     --upper-height: 150px;
@@ -34,402 +36,1282 @@
 
     --batman-yellow: 1px solid #FFCC00;
     --batman-black: #000;
-
-    --yellow-color: #f2d41d;
-    --white-color: #f5f7fb;
+    --image-width: 1100px;
 
 }
-@font-face {
-    font-family: 'BebasNeueRegular';
-    src: url(BebasNeueRegular.eot);
-    src: url(BebasNeueRegular.eot?#iefix) format('embedded-opentype'),
-         url(BebasNeueRegular.woff) format('woff'),
-         url(BebasNeueRegular.ttf) format('truetype'),
-         url(BebasNeueRegular.svg) format('svg');
-
-    font-weight: normal;
-    font-style: normal;
-}
-
 *, *::before, *::after {
     box-sizing: border-box;
-    border-radius: 50px;
+    border-radius: 10px;
+    /* font-family: 'Poppins',sans-serif; */
+    /* font-size: 1.2em; */
   }
 
 body{
+    background-color: whitesmoke;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: aliceblue;
-    flex-direction: column;
-}
-.container{
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    position: relative;
-}
-.title{
     width: 100%;
-    background-color: var(--yellow-color);
-    height: 250px;
-    border-radius: 0;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    align-items: center;
-}
-.boxes{
-    position: relative;
-    background-color: var(--white-color);
-    width: 100%;
-    display: flex;
-    /* justify-content: center;
-    align-items: center; */
+    height: 200vh;
+    overflow-x: hidden;
     flex-direction: column;
-    /* gap: 20px; */
-    padding-top: 100px;
-    padding-bottom: 100px;
 }
-.box{
-    position: relative;
-    margin: 20px;
-}
-.square{
-    position: relative;
-    width: 500px;
-    height: 250px;
-    border: var(--border-light);
-    background-color: #f5f7fb;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-}
-.box:nth-child(even){
-    /* left: 40%; */
-    align-self: flex-end;
-}
-.box:nth-child(odd){
-    align-self: flex-start;
-}
-.fixed2{
-    /* background-color: #fff; */
+.container1, .container2{
     width: 100%;
-    height: 200px;
-    position: fixed;
-    top: 92%;
-    filter: blur(20px);
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
-}
-
-.dashed{
-    position: absolute;
-    width: 80%;
-    height: 140px;
-    border-left: 3px dashed black;
-    border-bottom: 3px dashed black;
-    border-radius: 0;
-    left: 40%;
-    border-bottom-left-radius: 40px;
-    /* top: 80%;     */
-}
-.box:nth-child(even) .dashed{
-    position: absolute;
-    left: -30%;
-    border-right: 3px dashed black;
-    border-bottom-right-radius: 40px;
-    border-bottom-left-radius: 0;
-    border-left: 0;
-}
-.content{
-    width: 70%;
-    background-color: black;
-    height: 240px;
-    color: white;
-    font-size: 0.7em;
-    border-radius: 45px;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    line-height: 0.4;
+    position: relative;
 }
-p{
-    text-align: end;
-    word-wrap: normal;
-}
-.circle{
-    width: 100px;
-    height: 100px;
-    background-color: var(--yellow-color);
+.outer{
+    width: 1500px;
+    height: 700px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: whitesmoke;
+    gap: 15px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
 }
-.box:nth-child(even) .circle{
-    order: -1;
+.imagecontainer{
+    position: relative;
+    width: var(--image-width);
+    height: 670px;
+    background-color: #9B9B9B;
+    display: flex;
+    overflow-x: hidden;
 }
-.box:last-child .dashed{
-    display: none;
+.textcontainer{
+    width: 350px;
+    height: 670px;
+    background-color: white;
+    position: relative;
+    display: flex;
+    overflow-x: hidden;
 }
-.title-icon{
-    width: 30%;
-    height: 200px;
-    background-color: #000;
-}
-.title-content{
-    width: 60%;
-    height: 200px;
-}
-.footer{
+.months{
     width: 100%;
     height: 50px;
-    background-color: #000;
-    border-radius: 0;
-    display: none;
-}
-@media (max-width: 929px) {
-    .container{
-        width: 80%;
-    }    
-}
-@media (min-width: 1400px) {
-    .container{
-        width: 60%;
-    }
-  }
-
-.icon{
-    background-image: url("../assets/user-interface.png");
-    width: 64px;
-    height: 64px;
-    background-repeat: no-repeat;
+    /* background-color: #222222; */
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: unset;
+    gap: 4px;
+    position: absolute;
+    z-index: 1;
 }
-.ui-icon{
-    background-image: url("../assets/ui-design.png");
+.month{
+    width: 45px;
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 2px;
 }
-.api-icon{
-    background-image: url("../assets/api.png");
-}
-.tools-icon{
-    background-image: url("../assets/tools.png");
-}
-.build-icon{
-    background-image: url("../assets/build.png");
-}
-.cases-icon{
-    background-image: url("../assets/prioritize.png");
-}
-
-.tada{
+.navigators{
     width: 100%;
-    font-weight: bolder;
-    font-size: 1.8em;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 25%;
+    padding: 5px;
+}
+.buttons{
+    width: 100px;
+    height: 335px;
+    background-color: rgba(255, 255, 255, 0.25);
+    cursor: pointer;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(15px);
+    font-size: 1.2em;
+    opacity: 0.25;/*initial opacity for left button*/
+}
+.buttons:hover{
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+}
+.images{
+    height: 670px;
+    display: flex;
+}
+.image{
+    width: var(--image-width);
+    display: flex;
+    /* background-color: aliceblue; */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+}
+.texts{
+    height: 100%;
+    display: flex;
+}
+.text{
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
     text-align: center;
 }
-.art{
-    font-size: 3em;
-    font-weight: bolder;
-    line-height: 0.3;
+.texts, .images, .buttons{
+    transition: transform 0.7s ease-in-out;
 }
-.year{
-    color: white;
-    font-size: 3em;
-    padding-left: 5px;
-}
-*{
-    font-family: 'BebasNeueRegular', sans-serif;
-}
-.title-content{
-    padding-left: 40px;
+.container1 .outer .imagecontainer, .container1 .outer .textcontainer{
+    /* background-image: linear-gradient(to right,#D13ABD,#EEBD89); */
+    background-image: linear-gradient(125deg, #47f9e6 0%, #651fff 100%);;
+    /* background-image: linear-gradient(to right,#12100E,#2B4162); */
+    /* background-image: linear-gradient(to right,#000,#4D4855); */
+    /* background-image: linear-gradient(to right,#03072a,#03072a); */
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  /* background: url("https://dl.dropbox.com/s/mpmu0gjtxv2x3fs/Webp.net-resizeimage%20%281%29.jpg?raw=1") no-repeat center center fixed;  */
+  /* background: #1f1f47 */
 }
 
+@keyframes progress{
+    0%{
+      width: 25px;
+    }
+    25%{
+        width: 50px;
+    }
+    50%{
+        width: 75px;
+    }
+    75%{
+        width: 100px;
+    }
+    100%{
+        width: 200px;
+    }
+}
+
+.box{
+    width: 200px;
+    height: 200px;
+}
+.texts .text:nth-child(odd) .box{
+    background: rgba( 255, 255, 255, 0.15 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 18px );
+    -webkit-backdrop-filter: blur( 18px );
+    border-radius: 1rem;
+}
+.texts .text:nth-child(even) .box{
+    background: rgba( 255, 255, 255, 0.15 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 18px );
+    -webkit-backdrop-filter: blur( 18px );
+    border-radius: 1rem;
+}
+
+            /* C O N T A I N E R  2  */
+
+.charts{
+    height: 670px;
+    display: flex;
+}
+.chart{
+    width: var(--image-width);
+    display: flex;
+    /* background-color: aliceblue; */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 8em;
+    font-weight: bold;
+}
+.chartcontainer{
+    position: relative;
+    width: var(--image-width);
+    height: 670px;
+    background-color: #9B9B9B;
+    display: flex;
+    overflow-x: hidden;
+}
+.statscontainer{
+    width: 350px;
+    height: 670px;
+    background-color: white;
+    position: relative;
+    display: flex;
+    overflow-x: hidden;
+}
+.stats{
+    height: 100%;
+    display: flex;
+}
+.stat{
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container2 .outer .chartcontainer, .container2 .outer .statscontainer{
+    background-color: #1C1C1C;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+@keyframes chartAnim{
+    0%{
+      width: 25px;
+    }
+    25%{
+        width: 50px;
+    }
+    50%{
+        width: 75px;
+    }
+    75%{
+        width: 100px;
+    }
+    100%{
+        width: 200px;
+    }
+}
+.chart:nth-child(2){
+    content: "";
+    background-color: #1C1C1C;
+    transform: translateX(-1100px);
+}
+.container2{
+    justify-content: space-evenly;
+    background-color: gray;
+}
+.statbox{
+    width: 300px;
+    /* height: 500px; */
+    /* background-color: whitesmoke; */
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex: 5;
+}
+.cases{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+.numbers{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+.diffcount{
+    color: greenyellow;
+}
+.stat-title{
+    color: whitesmoke;
+    font-size: 2em;
+    height: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.card{
+    display: flex;
+    height: 180px;
+    width: 180px;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    /* background-color: greenyellow; */
+    flex: 1 1 calc(33.33% - 10px);
+    /* flex: 3; */
+    color: white;
+}
+.pic{
+    width: 150px;
+    height: 150px;
+    background-color: #343434;
+}
+.listitems{
+    width: 70%;
+    min-height: 80%;
+    background: rgba( 255, 255, 255, 0.15 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 18px );
+    -webkit-backdrop-filter: blur( 18px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border-radius: 1rem;
+    padding: 1.5rem;
+    z-index: 10;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+}
+.list{
+    width: 70%;
+    height: 35px;
+    display: flex;
+    /*justify-content: center;*/
+    align-items: center;
+    /* border: 1px solid white; */
+    /* background-color: #f0f8ff37; */
+    /* background-color: #00000023; */
+    font-size: 1.2em;
+    border-radius: 5px;
+    /* background: #1f1f47 */
+    gap: 15px;
+}
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+}
+.chartbuttons{
+    width: 70px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.75);
+    cursor: pointer;
+    z-index: 1;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    backdrop-filter: blur(15px);
+    text-decoration: none;
+    font-size: 1.2em;
+    opacity: 0.25;
+}
+
+.chartnavigators{
+    width: 100%;
+    position: absolute;
+    display: flex;
+    top: 90%;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    gap: 20%;
+    left: -10%;
+    opacity: 0;
+}
+.card-outer {
+    width: 100%;
+    /* max-width: 680px; */
+    padding: 15px;
+  
+    position: relative;
+  }
+  .card-content {
+    position: relative;
+  }
+
+.text:nth-child(1){
+    font-size: 1.5em;
+}
+.image:nth-child(1) .list{
+    font-size: 4em;
+}
+.pic{
+    width: 150px;
+    height: 150px;
+    background-size: 150px;
+}
+.card:nth-child(1) .pic{
+    background-image: url("../assets/abinathan.png");
+}
+.card:nth-child(2) .pic{
+    background-image: url("../assets/suganthi.png");
+}
+.card:nth-child(3) .pic{
+    background-image: url("../assets/gokul.png");
+}
+.card:nth-child(4) .pic{
+    background-image: url("../assets/dhinesh.png");
+}
+.card:nth-child(5) .pic{
+    background-image: url("../assets/benilin.png");
+}
+.card:nth-child(6) .pic{
+    background-image: url("../assets/jeffrey.png");
+}
+.texts:last-child .text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.down-arrow{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 75%;
+    display: inline-block;
+    border-top: 7px solid #ffffff89;
+    border-right: 7px solid #ffffff89;
+    transform: rotate(135deg);
+    border-radius: 0;
+    animation: moveUpDown 2s infinite 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.down-arrow:nth-child(1){
+    top: 70%;
+}
+.down-arrow:nth-child(3){
+    top: 80%;
+}
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0) rotate(135deg); /* Start position */
+    }
+    50% {
+        transform: translateY(50px) rotate(135deg); /* Move down */
+    }
+    100% {
+        transform: translateY(0) rotate(135deg); /* Return to start */
+    }
+}
+
+/* *{
+    cursor: none;
+} */
+.listitems{
+    text-align: left;
+}
+
+.list-dot {
+    /* transform: scale(0.2); */
+    /* display: inline-block; */
+    /* animation: pulse infinite alternate 0.9s; */
+    color: #7a24f2;
+    color: whitesmoke;
+  }
+
+/* .list:nth-child(even), .list:nth-child(even) .list-dot{
+    color: #613DFC;
+} */
+*{
+    font-family: "Nunito";
+}
+.navigators{
+    opacity: 0;
+}
     </style>
+    <title>Document</title>
 </head>
 <body>
-    <div class="container">
-        <div class="title">
-            <div class="title-icon">
-                <div class="icon-title"></div>
+    <div class="container1 container" id="container1">
+        <div class="outer">
+            <div class="imagecontainer">
+                <div class="months">
+                    <div class="month"></div>
+                    <div class="month"></div>
+                    <div class="month"></div>
+                    <div class="month"></div>
+                    <div class="month"></div>
+                    <div class="month"></div>
+                    <div class="month"></div>
+                    <div class="month"></div>
+                </div>
+                <div class="images">
+                    <div class="image"></div>
+                    <div class="image"></div>
+                    <div class="image"></div>
+                    <div class="image"></div>
+                    <div class="image"></div>
+                    <div class="image"></div>
+                    <div class="image"></div>
+                    <div class="image"></div>
+                </div>
+                <div class="navigators">
+                    <div class="buttons left"><</div>
+                    <div class="buttons right">></div>
+                </div>
+                <div class="blob"></div>
             </div>
-            <div class="title-content">
-                <h2 class="art">IAM-ART</h2>
-                <h2 class="art">ROADMAP</h2>
-                <h1 class="year">2025</h1>
-            </div>
-        </div>
-        <div class="boxes">
-            <div class="box">
-                <div class="tada">UI</div>
-                <div class="square">
-                    <div class="content">
-                        <p>Cross browser & cross platform testing</p>
-                        <p>Docker support for ui automation</p>
-                        <p>Client side code coverage</p>
-                        <p>DC specific suite in pre</p>
-                        <p>CI-CT for UI</p>
-                    </div>
-                    <div class="circle">
-                        <div class="icon ui-icon"></div>
+            <div class="textcontainer">
+                <div class="texts">
+                    <div class="text"></div>
+                    <div class="text"></div>
+                    <div class="text"></div>
+                    <div class="text"></div>
+                    <div class="text"></div>
+                    <div class="text"></div>
+                    <div class="text"></div>
+                    <div class="text">
+                        <!-- <div class="down-arrow"></div>
+                        <div class="down-arrow"></div>
+                        <div class="down-arrow"></div> -->
                     </div>
                 </div>
-                <div class="dashed"></div>
-            </div>
-            <div class="box">
-                <div class="tada">UI</div>
-                <div class="square">
-                    <div class="content">
-                        <p>Selenium framework revamp - flow cases</p>
-                        <p>Cross DC handling in local</p>
-                        <p>UI selenium report revamp</p>
-                        <p>Self-healing UI cases</p>
-                        <p>Hotfix suite</p>
-                    </div>
-                    <div class="circle">
-                        <div class="icon ui-icon"></div>
-                    </div>
-                </div>
-                <div class="dashed"></div>
-            </div>
-            <div class="box">
-                <div class="tada">API</div>
-                <div class="square">
-                    <div class="square">
-                        <div class="content">
-                            <p>Scaling API automation(kubernets / docker swarm)</p>
-                            <p>Replicate accounts env in dockers for testing</p>
-                            <p>Cache clearance revamp</p>
-                            <p>ACL framework revamp</p>
-                        </div>
-                        <div class="circle">
-                            <div class="icon api-icon"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="dashed"></div>
-            </div>
-            <div class="box">
-                <div class="tada">API</div>
-                <div class="square">
-                    <div class="square">
-                        <div class="content">
-                            <p>Agentcache invalid case & update operations</p>
-                            <p>Existing Suite run with agentcache enabled</p>
-                            <p>SQL & Redis call analysis while API run</p>
-                            <p>IP restriction handling in APIs</p>
-                            <p>Portal test flow</p>
-                        </div>
-                        <div class="circle">
-                            <div class="icon api-icon"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="dashed"></div>
-            </div>
-            <div class="box">
-                <div class="tada">TOOLS</div>
-                <div class="square">
-                    <div class="content">
-                        <p>Impact analysis support for subservices</p>
-                        <p>Sub services build automation</p>
-                        <p>Memory & code profiling</p>
-                        <p>API Sampling</p>
-                    </div>
-                    <div class="circle">
-                        <div class="icon tools-icon"></div>
-                    </div>
-                </div>
-                <div class="dashed"></div>
-            </div>
-            <div class="box">
-                <div class="tada">TOOLS</div>
-                <div class="square">
-                    <div class="content">
-                        <p>Collections read & write verification at agent side</p>
-                        <p>Service based role restriction at ART side</p>
-                        <p>Security analysis tool</p>
-                        <p>Query optimisation</p>
-                    </div>
-                    <div class="circle">
-                        <div class="icon tools-icon"></div>
-                    </div>
-                </div>
-                <div class="dashed"></div>
-            </div>
-            <div class="box">
-                <div class="tada">BUILD</div>
-                <div class="square">
-                    <div class="content">
-                        <p>Build update process centralisation for all subservice</p>
-                        <p>Build dashboard to reduce no. of bots & easier view</p>
-                        <p>Build update for subgrids based on IAM milestone</p>
-                        <p>DPIA report sync for all subteams</p>
-                    </div>
-                    <div class="circle">
-                        <div class="icon build-icon"></div>
-                    </div>
-                </div>
-                <div class="dashed"></div>
-            </div>
-            <div class="box">
-                <div class="tada">BUILD</div>
-                <div class="square">
-                    <div class="content">
-                        <p>Health monitor for builds based on reports & other tools</p>
-                        <p>Milestone docker image automate for service teams</p>
-                        <p>Report summary combining all reports.</p>
-                        <p>Maintain build & automation stats</p>
-                    </div>
-                    <div class="circle">
-                        <div class="icon build-icon"></div>
-                    </div>
-                </div>
-                <div class="dashed"></div>
-            </div>
-            <div class="box">
-                <div class="tada">CASES</div>
-                <div class="square">
-                    <div class="content">
-                        <p>Onpremise UI / API</p>
-                        <p>Mail Sending</p>
-                        <p>Audit / ARM</p>
-                        <p>OAuth</p>
-                        <p>MTS</p>
-                    </div>
-                    <div class="circle">
-                        <div class="icon cases-icon"></div>
-                    </div>
-                </div>
-                <div class="dashed"></div>
-            </div>
-            <div class="box">
-                <div class="tada">CASES</div>
-                <div class="square">
-                    <div class="content">
-                        <p>Contacts - Need to revamp</p>
-                        <p>Mobile browser testing</p>
-                        <p>DCL - yet to start</p>
-                        <p>AOC - yet to start</p>
-                        <p>Client Portal</p>
-                    </div>
-                    <div class="circle">
-                        <div class="icon cases-icon"></div>
-                    </div>
-                </div>
-                <div class="dashed"></div>
             </div>
         </div>
     </div>
-    <div class="footer"></div>
-    <div class="fixed"></div>
+    <div class="container2 container" id="container2">
+        <div class="outer">
+            <div class="chartcontainer">
+                <div class="months">
+                    <div class="month"></div>
+                    <div class="month"></div>
+                    <div class="month"></div>
+                    <div class="month"></div>
+                    <div class="month"></div>
+                    <div class="month"></div>
+                    <div class="month"></div>
+                    <div class="month"></div>
+                    <div class="month"></div>
+                    <div class="month"></div>
+                    <div class="month"></div>
+                    <div class="month"></div>
+                </div>
+                <div class="charts">
+                    <div class="chart">
+                        <div class="card-outer">
+                            <div class="card-content">
+                                <div id="line-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="chart">SLIDER</div> -->
+                    <!-- <div class="image"></div>
+                    <div class="image"></div>
+                    <div class="image"></div>
+                    <div class="image"></div>
+                    <div class="image"></div>
+                    <div class="image"></div>
+                    <div class="image"></div>
+                    <div class="image"></div>
+                    <div class="image"></div>
+                    <div class="image"></div> -->
+                </div>
+            </div>
+            <div class="statscontainer">
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-title">Test Case Count</div>
+                        <div class="statbox">
+                            <div class="cases">
+                                <div class="casename">Pilot UI</div>
+                                <div class="numbers">
+                                    <div class="diffcount">+23</div>
+                                    <div class="casecount">8932</div>
+                                </div>
+                            </div>
+                            <div class="cases">
+                                <div class="casename">Selenium UI</div>
+                                <div class="numbers">
+                                    <div class="diffcount"></div>
+                                    <div class="casecount">10148</div>
+                                </div>
+                            </div>
+                            <div class="cases">
+                                <div class="casename">API</div>
+                                <div class="numbers">
+                                    <div class="diffcount"></div>
+                                    <div class="casecount">106610</div>
+                                </div>
+                            </div>
+                            <div class="cases">
+                                <div class="casename">OAuth</div>
+                                <div class="numbers">
+                                    <div class="diffcount"></div>
+                                    <div class="casecount">771</div>
+                                </div>
+                            </div>
+                            <div class="cases">
+                                <div class="casename">Audit</div>
+                                <div class="numbers">
+                                    <div class="diffcount"></div>
+                                    <div class="casecount">64</div>
+                                </div>
+                            </div>
+                            <div class="cases">
+                                <div class="casename">ARM</div>
+                                <div class="numbers">
+                                    <div class="diffcount"></div>
+                                    <div class="casecount">0</div>
+                                </div>
+                            </div>
+                            <div class="cases">
+                                <div class="casename">Onp-UI</div>
+                                <div class="numbers">
+                                    <div class="diffcount"></div>
+                                    <div class="casecount">890</div>
+                                </div>
+                            </div>
+                            <div class="cases">
+                                <div class="casename">Onp-API</div>
+                                <div class="numbers">
+                                    <div class="diffcount"></div>
+                                    <div class="casecount">105868</div>
+                                </div>
+                            </div>
+                            <div class="cases">
+                                <div class="casename">MTS</div>
+                                <div class="numbers">
+                                    <div class="diffcount"></div>
+                                    <div class="casecount">18993</div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="chartnavigators">
+            <div class="chartbuttons left"><</div>
+            <div class="chartbuttons right" role="button">></div>
+        </div>
+    </div>
+    <script src="./scripts/index.js"></script>
+    <script>
+        const imageWidth = parseInt($(".container1 .image").css("width").replace("px", ""));
+const textWidth = parseInt($(".container1 .text").css("width").replace("px", ""));
+var monthIndex = 0;
+const progressAnimation = "progress 5s ease-in-out forwards";
+var images = $(".container1 .images")[0];
+const contentArray = $(".container1 .image");
+const textArray = $(".container1 .text");
+var texts = $(".container1 .texts")[0];
+var months = $(".container1 .month");
+const monthCount = months.length;
+var monthColor = "white";
+months[monthIndex].style.backgroundColor = "white";
+// months[monthIndex].style.animation = progressAnimation;
+var imageTranslateXValue = 0;
+var textTranslateXValue = 0;
+const C1LeftButton = $(".container1 .left");
+const C1RighftButton = $(".container1 .right");
+const downArrow = $(".down-arrow");
+
+const introValues = [
+  {
+    title: "IAM-ART",
+  },
+  {
+    title: "UI",
+    values: [
+      "Input validation Framework UI - Selenium",
+      "Sign-up input validation Suite",
+      "Client portal sign-up input Validation",
+      "SAML & Account Recovery automation",
+      "Windows machine support added for test run",
+      "Onpremise Suite",
+      "Conditional Access framework.",
+      "Zvault integration",
+      "ZVoice OTP support for OTP related test automation.",
+      "Ticket and OAuth validation Audit  Automation",
+      "Fetch API for Close account audit - ARM API automation",
+      "OAuth Portal Test Suite",
+    ],
+  },
+  {
+    title: "API",
+    values: [
+      "Thread Local automation (Server & agent)",
+      "Switch service automation",
+      "GeoFencing automation",
+      "Mail Client automation",
+      "API Mail Sending",
+      "MTS test suite",
+      "Portal API Cases new flow revamp",
+      "Malicious input Testing",
+    ],
+  },
+  {
+    title: "New Joinees",
+    values: [
+      "Abinathan",
+      "Suganthi",
+      "Gokul",
+      "DhineshKumar",
+      "Benilin",
+      "Jeffrey",
+    ],
+  },
+  {
+    title: "Tools",
+    values: [
+      "MI Query diff between builds",
+      "CI-CT flow - Accounts",
+      "Master test case document preparation",
+      "Load testing for Onp API & UI - creator team",
+      "New DC deployment testing - AWSCRM, NIC, NCC, SA",
+      "OTP/digest fetch for testing & other services - Aura",
+      "Changenotes tool support for subservices",
+      "Build Update tool - One Team",
+      "PenTest - framework in-progress",
+      "OAuth Security flow exploration in progress",
+      "ART Architecture revamp in-progress",
+    ],
+  },
+  {
+    title: "Major Branches Tested",
+    values: [
+      "payload encryption ",
+      "CSP ",
+      "RTL ",
+      "SRI",
+      "passkey windows support",
+      "Reverse sign-in enforcement",
+      "AR using ZohoApps",
+      "XMLDataConversion",
+    ],
+  },
+  {
+    title: "Bug Bounties-1",
+    values: [
+      "DOS in DCL due to signup validate endpoint",
+      "Possible of DOS in digest pages",
+      "DOS in groups page",
+      "DOS in GroupLogo upload Endpoint",
+      "DOS in profile picture upload",
+      "XSS in MagicLink-Signin Page",
+      "DOS via MFA page in Accounts",
+    ],
+  },
+  {
+    title: "Bug Bounties-2",
+    values: [
+      "DOS in OTP Authenticator Page",
+      "SAML Reauthentication Security Issue",
+      "JWT ID_Token value was exposed in Logs",
+      "Broken access control in user api",
+      "Broken Access Control - Account Take Over",
+      "Unverified Email Signup in Arattai",
+    ]
+  }
+];
+
+let activeSection = null;
+
+$(window).on("load", ()=>{
+    C1RighftButton.css("opacity", "0.5");
+    C2RightButton.css("opacity", "1");
+    createBox(textArray[monthIndex], monthIndex);
+    createContent(contentArray[monthIndex], monthIndex);
+    // executeFunctions();
+})
+
+async function executeFunctions() {
+  // Call function1 10 times with 2s delay
+  await new Promise((resolve) => setTimeout(resolve, 5000)); // 2s delay
+  for (let i = 0; i < 10; i++) {
+    moveRight();
+    if(i<8){
+      await new Promise((resolve) => setTimeout(resolve, 3000)); // 2s delay
+    }
+  }
+
+  // Wait 20 after function1 ends
+  // await new Promise((resolve) => setTimeout(resolve, 2000));
+  downSlide();
+
+  // Call function3 10 times with 2s delay after function2
+  for (let i = 0; i < 10; i++) {
+    moveChartRight();
+    await new Promise((resolve) => setTimeout(resolve, 2000)); // 2s delay
+  }
+}
+
+C1LeftButton.on("click", moveLeft);
+C1RighftButton.on("click", moveRight);
+downArrow.on("click", downSlide);
+
+$(document).on("keydown", (event)=>{
+    if(activeSection == 'container1'){
+        if(event.key == "ArrowLeft"){
+            moveLeft();
+        }else if(event.key == "ArrowRight"){
+            moveRight();
+        }else if(event.key == "ArrowDown"){
+          downSlide();
+        }
+    }else{
+        if(event.key == "ArrowLeft"){
+            moveChartLeft();
+        }else if(event.key == "ArrowRight"){
+            moveChartRight();
+        }
+    }
+});
+
+// Observe which section is in the viewport
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            activeSection = entry.target.id; // Update the active section
+        }
+    });
+}, { threshold: 0.5 }); // At least 50% of the element should be visible
+
+// Start observing sections
+const sections = document.querySelectorAll('.container');
+sections.forEach(section => observer.observe(section));
+
+function downSlide(){
+    window.scrollBy({
+      top: window.innerHeight,
+      behavior: 'smooth'
+    });
+}
+
+function moveRight(){
+    months[monthIndex].style.animation = "";
+    if(monthIndex == monthCount-2){
+        imageTranslateXValue -= imageWidth;
+        textTranslateXValue -= textWidth;
+        monthIndex++;
+        monthColor = "white";
+        C1RighftButton.css("opacity", "0.25");
+    }else if(monthIndex < monthCount-2){
+        imageTranslateXValue -= imageWidth;
+        textTranslateXValue -= textWidth;
+        monthIndex++;
+        monthColor = "white";
+        C1RighftButton.css("opacity", "0.5");
+        C1LeftButton.css("opacity", "0.5");
+    }
+    createBox(textArray[monthIndex], monthIndex);
+    createContent(contentArray[monthIndex], monthIndex);
+
+    images.style.transform = `translateX(${imageTranslateXValue}px)`;
+    texts.style.transform=`translateX(${textTranslateXValue}px)`
+    months[monthIndex].style.backgroundColor = monthColor;
+    // months[monthIndex].style.animation = progressAnimation;
+}
+
+function moveLeft(){
+    months[monthIndex].style.animation = "";
+    if(monthIndex == 1){
+        imageTranslateXValue += imageWidth;
+        textTranslateXValue += textWidth;
+        monthColor = "rgba(255, 255, 255, 0.25)";
+        months[monthIndex].style.backgroundColor = monthColor;
+        monthIndex--;
+        C1LeftButton.css("opacity", "0.25");
+        C1RighftButton.css("opacity", "0.5");
+    }
+    if(monthIndex > 0){
+        imageTranslateXValue += imageWidth;
+        textTranslateXValue += textWidth;
+        monthColor = "rgba(255, 255, 255, 0.25)";
+        months[monthIndex].style.backgroundColor = monthColor;
+        monthIndex--;
+        C1RighftButton.css("opacity", "0.5");
+    }
+    images.style.transform=`translateX(${imageTranslateXValue}px)`
+    texts.style.transform=`translateX(${textTranslateXValue}px)`;
+    // months[monthIndex].style.animation = progressAnimation;
+}
+
+// var index = 0;
+function createBox(parent, contentIndex){
+    if(contentIndex <= textArray.length && $(parent).find(".box").length == 0){
+        var box = document.createElement("div");
+        box.innerText = introValues[contentIndex].title;
+        box.classList.add("box");
+        parent.appendChild(box);
+    }
+}
+// function createContent(parent, contentIndex){
+//     if(contentIndex <= contentArray.length && $(parent).find(".box").length == 0){
+//         var box = document.createElement("div");
+//         var content = introValues[contentIndex].values;
+//         content = (content == undefined || "") ? "Intro" : content
+//         var title = introValues[contentIndex].title;
+//         if(title == "new joinee"){
+//             for(let i=0;i<content.length;i++){
+//                 createNewJoineeBox(parent, contentIndex, content[i]);
+//             }
+//         }else{
+//             box.innerText = content;
+//             box.classList.add("box");
+//             parent.appendChild(box);
+//         }
+//     }
+// }
+function createContent(parent, contentIndex){
+    if(contentIndex <= contentArray.length && $(parent).find(".listitems").length == 0){
+        var listItems = document.createElement("div");
+        var content = introValues[contentIndex].values;
+        content = (content == undefined || "") ? "IAM-ART LookBack - 2024" : content
+        var title = introValues[contentIndex].title;
+        if(title == "New Joinees"){
+            for(let i=0;i<content.length;i++){
+                createNewJoineeBox(parent, contentIndex, content[i]);
+            }
+        }else{
+            listItems.classList.add("listitems");
+            appendList(listItems, content);
+            parent.appendChild(listItems);
+        }
+    }
+}
+
+function appendList(parentList, contents){
+    if(Array.isArray(contents)){
+        for(let i=0;i<contents.length;i++){
+            let list = document.createElement("div");
+            list.classList.add("list");
+            let listdot = document.createElement("div");
+            listdot.innerText = "# ";
+            listdot.classList.add("list-dot");
+            list.appendChild(listdot);
+            list.innerHTML += contents[i];
+            parentList.appendChild(list);
+        }
+    }else{
+        let list = document.createElement("div");
+            list.classList.add("list");
+            list.innerText = contents;
+            parentList.appendChild(list);
+    }
+}
+
+function createNewJoineeBox(parent, index, content){
+    if($(parent).find(".card").length < 6){
+        var card = document.createElement("div");
+    var pic = document.createElement("div");
+    pic.classList.add("pic");
+    var name = document.createElement("div");
+    name.innerText = content;
+    name.classList.add("nametext");
+    card.appendChild(pic);
+    card.appendChild(name);
+    card.classList.add("card");
+    parent.appendChild(card);
+    }
+}
+
+// /*
+//      C O N T A I N E R 2   changes
+
+function toSuperscript(exponent) {
+  const superscripts = ['⁰', '¹', '²', '³', '⁴', '⁵', '⁶', '⁷', '⁸', '⁹'];
+  return String(exponent)
+    .split('')
+    .map((digit) => superscripts[digit] || '') // Map digits to superscripts
+    .join('');
+}
+
+
+const statsValues = [
+    {
+      "Pilot UI":     [1154,   1154,   1255,   1255,   1348,   1361,   1361,   1361,   1361,   1361,   1361,   1361],
+      "Selenium UI":  [0,      62,     62,     62,     62,     5745,   5845,   9695,   9717,   9966,   10036,  10036],
+      "API":          [106589, 106938, 106944, 106944, 112938, 123160, 130344, 128233, 143864, 139028, 139028, 139047],
+      "OAuth":        [717,    717,    717,    717,    717,    1097,   1097,   1097,   1097,   1097,   1097,   1246],
+      "Audit":        [397,    397,    397,    397,    397,    415,    415,    415,    415,    423,    423,    426],
+      "ARM":          [0,      0,      0,      3,      3,      3,      3,      3,      3,      3,      3,      3],
+      "Onp-UI":       [221,    221,    221,    221,    221,    208,    208,    208,    200,    200,    200,    200],
+      "Onp-API":      [105868, 105894, 101940, 101940, 112210, 122418, 129602, 127491, 127491, 137939, 137939, 137958],
+      "MTS":          [18993,  18993,  18993,  18984,  18884,  17984,  15984,  14136,  14136,  14136,  14136,  14136],
+      // "mobile":       [0,      62,     62,     62,     62,     62,     62,     62,     62,     62,     62,     62],
+      // "client":       [0,      0,      0,      0,      0,      5638,   5642,   9492,   9492,   9492,   9492,   9492],
+      // "routing":      [0,      0,      0,      0,      0,      27,     27,     27,     27,     27,     27,     27],
+      // "mail-send":    [0,      0,      0,      0,      0,      7,      7,      7,      7,      7,      7,      7],
+      // "CDP":          [0,      0,      0,      0,      0,      5,      5,      5,      5,      5,      5,      5],
+      // "serv-page":    [0,      0,      0,      0,      0,      3,      3,      3,      3,      3,      3,      3],
+      // "threadloc":    [0,      0,      0,      0,      0,      0,      25,     25,     25,     25,     25,     25],
+      // "proxy":        [0,      0,      0,      0,      0,      0,      3,      3,      3,      3,      3,      3],
+      // "a-reco":       [0,      0,      0,      0,      0,      0,      96,     96,     100,    228,    298,    298],
+      // "pass-sign":    [0,      0,      0,      0,      0,      0,      0,      0,      18,     139,    139,    139]
+    }
+];
+
+
+const chartWidth = parseInt($(".container2 .chart").css("width").replace("px", ""));
+const statsWidth = parseInt($(".container2 .stat").css("width").replace("px", ""));
+var c2MonthIndex = -1;
+const chartAnimation = "chartAnim 2s ease-in-out forwards";
+// var charts = $(".container2 .chart")[1];
+const statsArray = $(".container2 .stat");
+var stats = $(".container2 .stats")[0];
+var c2Months = $(".container2 .month");
+const c2MonthCount = c2Months.length;
+var c2MonthColor = "white";
+c2Months[0].style.backgroundColor = "white";
+// c2Months[0].style.animation = chartAnimation;
+var chartTranslateXValue = -1100;
+var statsIndex = -1;
+const C2LeftButton = $(".container2 .left");
+const C2RightButton = $(".container2 .right");
+
+const statBox = $(".container2 .statbox").first();
+
+//        E X T E R N A L  C O D E
+//external resource
+var chartOptions = {
+  chart: {
+    height: 600,
+    type: 'line',
+    fontFamily: 'Helvetica, Arial, sans-serif',
+    foreColor: '#6E729B',
+    toolbar: {
+      show: false,
+    },
+  },
+  stroke: {
+    curve: 'smooth',
+    width: 2,
+  },
+  series: [
+    {
+      name: 'Pilot-UI',
+      data: [],
+    },
+    {
+      name: 'Selenium-UI',
+      data: [],
+    },
+    {
+      name: 'API',
+      data: [],
+    },
+    {
+      name: 'OAuth',
+      data: []
+    },
+    {
+      name: 'Audit',
+      data: [],
+    },
+    {
+      name: 'ARM',
+      data: [],
+    },
+    {
+      name: 'Onp-UI',
+      data: [],
+    },
+    {
+      name: 'Onp-API',
+      data: []
+    },
+    {
+      name: 'MTS',
+      data: []
+    }
+  ],
+  title: {
+    text: 'Cases-Count',
+    align: 'left',
+    offsetY: 25,
+    offsetX: 5,
+    style: {
+      fontSize: '14px',
+      fontWeight: 'bold',
+      color: '#e5e7eb88',
+    },
+  },
+  markers: {
+    size: 3,
+    strokeWidth: 0,
+    hover: {
+      size: 9,
+    },
+  },
+  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  xaxis: {
+    tooltip: {
+      enabled: false,
+    },
+    title:{
+      text: 'Jan-24 - Dec-24'
+    }
+  },
+  yaxis: {
+    logarithmic: true,
+    title: {
+      text: 'Cases count'
+    },
+    tickAmount: 8,
+    labels: {
+      formatter: (value) => {
+        const logValue = Math.log10(value);
+        return value.toLocaleString();
+      }
+    },
+    min: 1,
+    max: 1000000
+  },
+  legend: {
+    position: 'top',
+    horizontalAlign: 'right',
+    offsetY: -10,
+    labels: {
+      colors: '#fffff788',
+    },
+  },
+  grid: {
+    borderColor: '#D9DBF334',
+    xaxis: {
+      lines: {
+        show: true,
+      },
+    },
+    yaxis: {
+      lines: {
+        show: true,
+      },
+    },
+    show: true
+  },
+  // colors: ["#008FFB", "#00E396", "#FEB019", "#FF4560", "#775DD0", "#5DB0D0"],
+  // colors: ["#008FFB", "#00E396", "#FEB019", "#FF4560", "#775DD0", '#FF5733', '#33FF57', '#3357FF', '#FF33A1', '#A133FF', '#FFC300', '#33FFF6', '#FF5733', '#DAF7A6', '#900C3F',]
+  colors: ["#008FFB", "#00E396", "#FEB019", "#FF4560", "#775DD0", '#A133FF', '#FFC300', '#33FFF6', '#FF5733', '#DAF7A6', '#900C3F',]
+};
+
+var seriesData = [];
+var lineChart = new ApexCharts(document.querySelector('#line-chart'), chartOptions);
+lineChart.render();
+
+C2LeftButton.on("click", moveChartLeft);
+C2RightButton.on("click", moveChartRight);
+
+showCurrentValues(statsValues, statsIndex);
+// appendData(0);
+// appendData(1);
+moveChartRight();
+moveChartRight();
+
+
+function moveChartRight(){
+  if(c2MonthIndex>=0){
+    c2Months[c2MonthIndex].style.animation = "";
+  }
+    let condition = false;
+    if(c2MonthIndex == c2MonthCount-2){
+        chartTranslateXValue += 100;
+        statsIndex++;
+        c2MonthIndex++;
+        c2MonthColor = "white";
+        C2RightButton.css("opacity", "0.25");
+        condition = true;
+    }else if(c2MonthIndex < c2MonthCount-1){
+        chartTranslateXValue += 100;
+        statsIndex++;
+        c2MonthIndex++;
+        c2MonthColor = "white";
+        C2RightButton.css("opacity", "1");
+        C2LeftButton.css("opacity", "1");
+        condition = true;
+    }
+    // if(c2MonthIndex < c2MonthCount-1){
+    //   showCurrentValues(statsValues, statsIndex);
+    //   appendData(statsIndex);
+    // }
+    if(condition){
+      showCurrentValues(statsValues, statsIndex);
+      appendData(statsIndex);
+    }
+    // charts.style.transform = `translateX(${chartTranslateXValue}px)`;
+    c2Months[c2MonthIndex].style.backgroundColor = c2MonthColor;
+    // c2Months[c2MonthIndex].style.animation = chartAnimation;
+}
+
+function moveChartLeft(){
+    c2Months[c2MonthIndex].style.animation = "";
+    let condition = false;
+    if(c2MonthIndex == 2){
+        chartTranslateXValue -= 100;
+        c2MonthColor = "rgba(255, 255, 255, 0.25)";
+        c2Months[c2MonthIndex].style.backgroundColor = c2MonthColor;
+        c2MonthIndex--;
+        C2LeftButton.css("opacity", "0.25");
+        C2RightButton.css("opacity", "1");
+        condition = true;
+    }else if(c2MonthIndex > 0){
+        chartTranslateXValue -= 100;
+        c2MonthColor = "rgba(255, 255, 255, 0.25)";
+        c2Months[c2MonthIndex].style.backgroundColor = c2MonthColor;
+        c2MonthIndex--;
+        C2RightButton.css("opacity", "1");
+        condition = true;
+    }
+    if(condition){
+      removeData(statsIndex);
+      statsIndex--;
+      showCurrentValues(statsValues, statsIndex);
+    }
+    // charts.style.transform=`translateX(${chartTranslateXValue}px)`
+    // c2Months[c2MonthIndex].style.animation = chartAnimation;
+}
+
+
+function showCurrentValues(statsArray, sIndex){
+    let keys = Object.keys(statsArray[0]);
+    var numbers = $(".numbers");
+    for(let i=0;i<numbers.length;i++){
+        // var oldcount = parseInt($(numbers[i]).find(".casecount").text().replace(/[^0-9]/g, ""));
+        var oldcount = statsArray[0][keys[i]][0];
+        // var oldDiffcount = $(numbers[i]).find(".diffcount").text().replace(/[^0-9]/g, "");
+        // oldDiffcount = oldDiffcount == (undefined || "") ? 0 : oldDiffcount;
+        var newCount = statsArray[0][keys[i]][statsIndex];
+        if(sIndex > 0){
+            var diffCount = (newCount - oldcount);
+            $(numbers[i]).find(".casecount").text("[ " + newCount + " ]");
+            if(diffCount > 0){
+                $(numbers[i]).find(".diffcount").text("+" + diffCount);
+                $(numbers[i]).find(".diffcount").css("color", "greenyellow");
+            }else if(diffCount == 0){
+                $(numbers[i]).find(".diffcount").text("-");
+                $(numbers[i]).find(".diffcount").css("color", "greenyellow");
+            }else{
+                $(numbers[i]).find(".diffcount").text("" + diffCount);
+                $(numbers[i]).find(".diffcount").css("color", "#FF004F");
+            }
+        }else{
+            $(numbers[i]).find(".diffcount").text("-");
+            $(numbers[i]).find(".casecount").text("[ " + newCount + " ]");
+        }
+        let initialCount = statsArray[0][keys[i]][0];
+        $(numbers[i]).find(".casecount").text("[ " + initialCount + " ]");
+    }
+}
+
+
+  
+function appendData(index){
+  let keys = Object.keys(statsValues[0]);
+  let series = [];
+  keys.forEach((key, position) =>{
+    let value = statsValues[0][key][index];
+    let obj = {data: [value]}
+    series.push(obj);
+    if(seriesData[position] == undefined){
+      seriesData[position] = {data: []};
+    }
+    seriesData[position].data.push(value);
+  })
+  // lineChart.appendData(series);
+  lineChart.updateSeries(seriesData);
+}
+
+function removeData(index){
+  let keys = Object.keys(statsValues[0]);
+  for(let i=0;i<keys.length;i++){
+    seriesData[i].data.pop(index);
+  }
+  lineChart.updateSeries(seriesData);
+}
+    </script>
 </body>
 </html>
