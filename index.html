@@ -4,6 +4,256 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/index.css">
     <title>Document</title>
+    <style>
+        :root{
+    --border-light: 2px solid black;
+    --boxes-width: 800px;
+    --box-width: 500px;
+    --upper-height: 150px;
+    --upper-width: 500px;
+    --lower-height:50px;
+    --lower-width: 300px;
+    --flex-direction-column: column;
+    --flex-direction-row: row;
+    --background-color-light: white;
+    --color-light: black;
+    --border-dark: 1px solid white;
+    --background-color-dark: black;
+    --color-dark: white;
+
+    --color-matte-grey: #9B9B9B;
+    --color-matte-black: #343434;
+    --color-matte-black2: #121212;
+    --color-matte-black3: #222222;
+    --color-matte-black4: #2B2B2B;
+    --color-matte-black5: #1C1C1C;
+    --color-matte-beige: #F5D7C6;
+
+    --global-border-radius: 0px;
+    --border-red: 1px solid red;
+
+    --batman-yellow: 1px solid #FFCC00;
+    --batman-black: #000;
+
+    --yellow-color: #f2d41d;
+    --white-color: #f5f7fb;
+
+}
+@font-face {
+    font-family: 'BebasNeueRegular';
+    src: url(BebasNeueRegular.eot);
+    src: url(BebasNeueRegular.eot?#iefix) format('embedded-opentype'),
+         url(BebasNeueRegular.woff) format('woff'),
+         url(BebasNeueRegular.ttf) format('truetype'),
+         url(BebasNeueRegular.svg) format('svg');
+
+    font-weight: normal;
+    font-style: normal;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    border-radius: 50px;
+  }
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+    flex-direction: column;
+}
+.container{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+.title{
+    width: 100%;
+    background-color: var(--yellow-color);
+    height: 250px;
+    border-radius: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+.boxes{
+    position: relative;
+    background-color: var(--white-color);
+    width: 100%;
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    flex-direction: column;
+    /* gap: 20px; */
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.box{
+    position: relative;
+    margin: 20px;
+}
+.square{
+    position: relative;
+    width: 500px;
+    height: 250px;
+    border: var(--border-light);
+    background-color: #f5f7fb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+.box:nth-child(even){
+    /* left: 40%; */
+    align-self: flex-end;
+}
+.box:nth-child(odd){
+    align-self: flex-start;
+}
+.fixed2{
+    /* background-color: #fff; */
+    width: 100%;
+    height: 200px;
+    position: fixed;
+    top: 92%;
+    filter: blur(20px);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.dashed{
+    position: absolute;
+    width: 80%;
+    height: 140px;
+    border-left: 3px dashed black;
+    border-bottom: 3px dashed black;
+    border-radius: 0;
+    left: 40%;
+    border-bottom-left-radius: 40px;
+    /* top: 80%;     */
+}
+.box:nth-child(even) .dashed{
+    position: absolute;
+    left: -30%;
+    border-right: 3px dashed black;
+    border-bottom-right-radius: 40px;
+    border-bottom-left-radius: 0;
+    border-left: 0;
+}
+.content{
+    width: 70%;
+    background-color: black;
+    height: 240px;
+    color: white;
+    font-size: 0.7em;
+    border-radius: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    line-height: 0.4;
+}
+p{
+    text-align: end;
+    word-wrap: normal;
+}
+.circle{
+    width: 100px;
+    height: 100px;
+    background-color: var(--yellow-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box:nth-child(even) .circle{
+    order: -1;
+}
+.box:last-child .dashed{
+    display: none;
+}
+.title-icon{
+    width: 30%;
+    height: 200px;
+    background-color: #000;
+}
+.title-content{
+    width: 60%;
+    height: 200px;
+}
+.footer{
+    width: 100%;
+    height: 50px;
+    background-color: #000;
+    border-radius: 0;
+    display: none;
+}
+@media (max-width: 929px) {
+    .container{
+        width: 80%;
+    }    
+}
+@media (min-width: 1400px) {
+    .container{
+        width: 60%;
+    }
+  }
+
+.icon{
+    background-image: url("../assets/user-interface.png");
+    width: 64px;
+    height: 64px;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: unset;
+}
+.ui-icon{
+    background-image: url("../assets/ui-design.png");
+}
+.api-icon{
+    background-image: url("../assets/api.png");
+}
+.tools-icon{
+    background-image: url("../assets/tools.png");
+}
+.build-icon{
+    background-image: url("../assets/build.png");
+}
+.cases-icon{
+    background-image: url("../assets/prioritize.png");
+}
+
+.tada{
+    width: 100%;
+    font-weight: bolder;
+    font-size: 1.8em;
+    text-align: center;
+}
+.art{
+    font-size: 3em;
+    font-weight: bolder;
+    line-height: 0.3;
+}
+.year{
+    color: white;
+    font-size: 3em;
+    padding-left: 5px;
+}
+*{
+    font-family: 'BebasNeueRegular', sans-serif;
+}
+.title-content{
+    padding-left: 40px;
+}
+
+    </style>
 </head>
 <body>
     <div class="container">
