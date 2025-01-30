@@ -6,6 +6,8 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <title>Document</title>
     <style>
         :root{
     --border-light: 1px solid black;
@@ -165,15 +167,9 @@ body{
     transition: transform 0.7s ease-in-out;
 }
 .container1 .outer .imagecontainer, .container1 .outer .textcontainer{
-    /* background-image: linear-gradient(to right,#D13ABD,#EEBD89); */
     background-image: linear-gradient(125deg, #47f9e6 0%, #651fff 100%);;
-    /* background-image: linear-gradient(to right,#12100E,#2B4162); */
-    /* background-image: linear-gradient(to right,#000,#4D4855); */
-    /* background-image: linear-gradient(to right,#03072a,#03072a); */
-  background-repeat: no-repeat;
-  background-attachment: fixed; 
-  /* background: url("https://dl.dropbox.com/s/mpmu0gjtxv2x3fs/Webp.net-resizeimage%20%281%29.jpg?raw=1") no-repeat center center fixed;  */
-  /* background: #1f1f47 */
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
 }
 
 @keyframes progress{
@@ -331,7 +327,6 @@ body{
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
-    /* background-color: greenyellow; */
     flex: 1 1 calc(33.33% - 10px);
     /* flex: 3; */
     color: white;
@@ -363,14 +358,9 @@ body{
     width: 70%;
     height: 35px;
     display: flex;
-    /*justify-content: center;*/
     align-items: center;
-    /* border: 1px solid white; */
-    /* background-color: #f0f8ff37; */
-    /* background-color: #00000023; */
     font-size: 1.2em;
     border-radius: 5px;
-    /* background: #1f1f47 */
     gap: 15px;
 }
 .box{
@@ -405,8 +395,8 @@ body{
     align-items: center;
     padding: 10px;
     gap: 20%;
-    left: -10%;
-    opacity: 0;
+    /* left: -10%; */
+    opacity: 1;
 }
 .card-outer {
     width: 100%;
@@ -488,36 +478,49 @@ body{
     }
 }
 
-/* *{
-    cursor: none;
-} */
 .listitems{
     text-align: left;
 }
 
 .list-dot {
-    /* transform: scale(0.2); */
-    /* display: inline-block; */
-    /* animation: pulse infinite alternate 0.9s; */
     color: #7a24f2;
     color: whitesmoke;
-  }
+}
 
-/* .list:nth-child(even), .list:nth-child(even) .list-dot{
-    color: #613DFC;
-} */
 *{
     font-family: "Nunito";
 }
 .navigators{
-    opacity: 0;
+    opacity: 1;
+}
+
+.casescount{
+    font-size: 1em;
+}
+.diffcount{
+    font-size: 1.5em;
 }
     </style>
-    <title>Document</title>
 </head>
 <body>
     <div class="container1 container" id="container1">
         <div class="outer">
+            <div class="textcontainer">
+                <div class="texts">
+                    <div class="text"></div>
+                    <div class="text"></div>
+                    <div class="text"></div>
+                    <div class="text"></div>
+                    <div class="text"></div>
+                    <div class="text"></div>
+                    <div class="text"></div>
+                    <div class="text">
+                    <div class="down-arrow"></div>
+                    <div class="down-arrow"></div>
+                    <div class="down-arrow"></div>
+                    </div>
+                </div>
+            </div>
             <div class="imagecontainer">
                 <div class="months">
                     <div class="month"></div>
@@ -545,62 +548,10 @@ body{
                 </div>
                 <div class="blob"></div>
             </div>
-            <div class="textcontainer">
-                <div class="texts">
-                    <div class="text"></div>
-                    <div class="text"></div>
-                    <div class="text"></div>
-                    <div class="text"></div>
-                    <div class="text"></div>
-                    <div class="text"></div>
-                    <div class="text"></div>
-                    <div class="text">
-                        <!-- <div class="down-arrow"></div>
-                        <div class="down-arrow"></div>
-                        <div class="down-arrow"></div> -->
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
     <div class="container2 container" id="container2">
         <div class="outer">
-            <div class="chartcontainer">
-                <div class="months">
-                    <div class="month"></div>
-                    <div class="month"></div>
-                    <div class="month"></div>
-                    <div class="month"></div>
-                    <div class="month"></div>
-                    <div class="month"></div>
-                    <div class="month"></div>
-                    <div class="month"></div>
-                    <div class="month"></div>
-                    <div class="month"></div>
-                    <div class="month"></div>
-                    <div class="month"></div>
-                </div>
-                <div class="charts">
-                    <div class="chart">
-                        <div class="card-outer">
-                            <div class="card-content">
-                                <div id="line-chart"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- <div class="chart">SLIDER</div> -->
-                    <!-- <div class="image"></div>
-                    <div class="image"></div>
-                    <div class="image"></div>
-                    <div class="image"></div>
-                    <div class="image"></div>
-                    <div class="image"></div>
-                    <div class="image"></div>
-                    <div class="image"></div>
-                    <div class="image"></div>
-                    <div class="image"></div> -->
-                </div>
-            </div>
             <div class="statscontainer">
                 <div class="stats">
                     <div class="stat">
@@ -673,11 +624,51 @@ body{
                         </div>
                 </div>
             </div>
+            <div class="chartcontainer">
+                <div class="months">
+                    <div class="month"></div>
+                    <div class="month"></div>
+                    <div class="month"></div>
+                    <div class="month"></div>
+                    <div class="month"></div>
+                    <div class="month"></div>
+                    <div class="month"></div>
+                    <div class="month"></div>
+                    <div class="month"></div>
+                    <div class="month"></div>
+                    <div class="month"></div>
+                    <div class="month"></div>
+                </div>
+                <div class="charts">
+                    <div class="chart">
+                        <div class="card-outer">
+                            <div class="card-content">
+                                <div id="line-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="chart">SLIDER</div> -->
+                    <!-- <div class="image"></div>
+                    <div class="image"></div>
+                    <div class="image"></div>
+                    <div class="image"></div>
+                    <div class="image"></div>
+                    <div class="image"></div>
+                    <div class="image"></div>
+                    <div class="image"></div>
+                    <div class="image"></div>
+                    <div class="image"></div> -->
+                </div>
+                <div class="chartnavigators">
+                    <div class="chartbuttons left"><</div>
+                    <div class="chartbuttons right" role="button">></div>
+                </div>
+            </div>
         </div>
-        <div class="chartnavigators">
+        <!-- <div class="chartnavigators">
             <div class="chartbuttons left"><</div>
             <div class="chartbuttons right" role="button">></div>
-        </div>
+        </div> -->
     </div>
     <script src="./scripts/index.js"></script>
     <script>
