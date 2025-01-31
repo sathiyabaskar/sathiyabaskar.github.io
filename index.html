@@ -2,15 +2,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/index.css">
+    <!-- <link rel="stylesheet" href="css/index.css"> -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     
     <title>Document</title>
     <style>
-        :root{
-    --border-light: 1px solid black;
+    /*    :root{
+     --border-light: 1px solid black;
     --boxes-width: 800px;
     --box-width: 500px;
     --upper-height: 150px;
@@ -38,9 +38,11 @@
 
     --batman-yellow: 1px solid #FFCC00;
     --batman-black: #000;
-    --image-width: 1100px;
+    --image-width: 1100px; 
 
 }
+*/
+
 *, *::before, *::after {
     box-sizing: border-box;
     border-radius: 10px;
@@ -67,27 +69,37 @@ body{
     position: relative;
 }
 .outer{
-    width: 1500px;
-    height: 700px;
+    /* width: 1500px; */
+    width: 78.13%;
+    height: 72.16%;
+    /* height: 700px; */
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: whitesmoke;
-    gap: 15px;
-    border-radius: 15px;
+    /* gap: 15px; */
+    gap: 1%;
+    /* border-radius: 15px; */
+    border-radius: 1%;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
 }
 .imagecontainer{
     position: relative;
-    width: var(--image-width);
-    height: 670px;
+    /* width: 1100px; */
+    width: 73.33%;
+    /* height: 670px; */
+    height: 95.71%;
     background-color: #9B9B9B;
     display: flex;
     overflow-x: hidden;
+    /* gap: 10px; */
+    align-items: center;
 }
 .textcontainer{
-    width: 350px;
-    height: 670px;
+    /* width: 350px; */
+    width: 23.33%;
+    /* height: 670px; */
+    height: 95.71%;
     background-color: white;
     position: relative;
     display: flex;
@@ -95,33 +107,40 @@ body{
 }
 .months{
     width: 100%;
-    height: 50px;
+    /* height: 50px; */
+    height: 7.14%;
     /* background-color: #222222; */
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 4px;
+    /* gap: 4px; */
+    gap: 0.5%;
     position: absolute;
     z-index: 1;
+    top: 3%;
 }
 .month{
-    width: 45px;
+    /* width: 45px; */
+    width: 5%;
     height: 5px;
+    /* height: 8%; */
     background-color: rgba(255, 255, 255, 0.25);
-    border-radius: 2px;
+    border-radius: 10%;
 }
 .navigators{
     width: 100%;
+    height: 100%;
     position: absolute;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    top: 25%;
+    /* top: 25%; */
     padding: 5px;
 }
 .buttons{
-    width: 100px;
-    height: 335px;
+    width: 9.09%;
+    /* height: 335px; */
+    height: 50%;
     background-color: rgba(255, 255, 255, 0.25);
     cursor: pointer;
     color: #fff;
@@ -136,11 +155,13 @@ body{
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
 }
 .images{
-    height: 670px;
+    /* height: 670px; */
+    height: 95.71%;
     display: flex;
+    /* align-items: inherit; */
 }
 .image{
-    width: var(--image-width);
+    width: 1100px;
     display: flex;
     /* background-color: aliceblue; */
     justify-content: center;
@@ -154,9 +175,11 @@ body{
 .texts{
     height: 100%;
     display: flex;
+    /* width: 100%; */
 }
 .text{
     width: 350px;
+    /* width: 50%; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -191,7 +214,7 @@ body{
 }
 
 .box{
-    width: 200px;
+    width: 57.14%;
     height: 200px;
 }
 .texts .text:nth-child(odd) .box{
@@ -212,11 +235,12 @@ body{
             /* C O N T A I N E R  2  */
 
 .charts{
-    height: 670px;
+    /* height: 670px; */
+    height: 95.71%;
     display: flex;
 }
 .chart{
-    width: var(--image-width);
+    width: 1100px;
     display: flex;
     /* background-color: aliceblue; */
     justify-content: center;
@@ -227,15 +251,19 @@ body{
 }
 .chartcontainer{
     position: relative;
-    width: var(--image-width);
-    height: 670px;
+    /* width: 1100px; */
+    width: 73.33%;
+    /* height: 670px; */
+    height: 95.71%;
     background-color: #9B9B9B;
     display: flex;
     overflow-x: hidden;
 }
 .statscontainer{
-    width: 350px;
-    height: 670px;
+    /* width: 350px; */
+    width: 23.33%;
+    /* height: 670px; */
+    height: 95.71%;
     background-color: white;
     position: relative;
     display: flex;
@@ -344,7 +372,7 @@ body{
     backdrop-filter: blur( 18px );
     -webkit-backdrop-filter: blur( 18px );
     border: 1px solid rgba( 255, 255, 255, 0.18 );
-    border-radius: 1rem;
+    border-radius: 1%;
     padding: 1.5rem;
     z-index: 10;
     color: whitesmoke;
@@ -353,6 +381,7 @@ body{
     align-items: center;
     flex-direction: column;
     gap: 5px;
+    /* gap: 10%; */
 }
 .list{
     width: 70%;
@@ -370,8 +399,8 @@ body{
     color: whitesmoke;
 }
 .chartbuttons{
-    width: 70px;
-    height: 40px;
+    width: 60px;
+    height: 30px;
     background-color: rgba(0, 0, 0, 0.75);
     cursor: pointer;
     z-index: 1;
@@ -384,6 +413,7 @@ body{
     text-decoration: none;
     font-size: 1.2em;
     opacity: 0.25;
+    border-radius: 10%;
 }
 
 .chartnavigators{
@@ -500,6 +530,247 @@ body{
 .diffcount{
     font-size: 1.5em;
 }
+
+/*
+ @media (min-width: 3840px) {
+
+        .image{
+            width: 2200px;
+            height: 1200px;
+        }
+        .text, .stat{
+            width: 700px;
+        }
+        .images{
+            align-items: center;
+        }
+        .statbox{
+            width: 600px;
+        }
+        .chart{
+            width: 2200px;
+        }
+        .box{
+            height: 400px;
+        }
+        .cases{
+            padding: 20px;
+        }
+        .card{
+            width: 360px;
+            height: 360px;
+        }
+        .pic{
+            width: 300px;
+            height: 300px;
+        }
+        .chartbuttons{
+            width: 120px;
+            height: 60px;
+        }
+    }
+    @media (min-width: 3360px) {
+
+.image{
+    width: 1900px;
+    height: 1200px;
+}
+.text, .stat{
+    width: 600px;
+}
+.images{
+    align-items: center;
+}
+.statbox{
+    width: 600px;
+}
+.chart{
+    width: 1900px;
+}
+.box{
+    height: 350px;
+}
+.cases{
+    padding: 20px;
+}
+.card{
+    width: 300px;
+    height: 300px;
+}
+.pic{
+    width: 275px;
+    height: 275px;
+}
+.chartbuttons{
+    width: 120px;
+    height: 60px;
+}
+.buttons{
+    width: 150px;
+}
+}
+
+@media (min-width: 3200px) {
+    .outer{
+        height: 69.16%;
+    }
+
+.image{
+    width: 1825px;
+    height: 1200px;
+}
+.text, .stat{
+    width: 600px;
+}
+.images{
+    align-items: center;
+}
+.statbox{
+    width: 600px;
+}
+.chart{
+    width: 1800px;
+}
+.box{
+    height: 350px;
+}
+.cases{
+    padding: 20px;
+}
+.card{
+    width: 300px;
+    height: 300px;
+}
+.pic{
+    width: 275px;
+    height: 275px;
+}
+.chartbuttons{
+    width: 120px;
+    height: 60px;
+}
+.buttons{
+    width: 150px;
+}
+}
+
+@media (min-width: 2460px) {
+
+    .image{
+        width: 1450px;
+        height: 1200px;
+    }
+    .text, .stat{
+        width: 480px;
+    }
+    .images{
+        align-items: center;
+    }
+    .statbox{
+        width: 480px;
+    }
+    .chart{
+        width: 1450px;
+    }
+    .box{
+        height: 350px;
+    }
+    .cases{
+        padding: 20px;
+    }
+    .card{
+        width: 360px;
+        height: 360px;
+    }
+    .pic{
+        width: 300px;
+        height: 300px;
+    }
+    .chartbuttons{
+        width: 120px;
+        height: 60px;
+    }
+}
+    
+
+@media (min-width: 2000px) {
+    .image{
+        width: 1850px;
+        height: 1100px;
+    }
+    .text, .stat{
+        width: 600px;
+    }
+    .images{
+        align-items: center;
+    }
+    .statbox{
+        width: 600px;
+    }
+    .chart{
+        width: 1800px;
+    }
+    .box{
+        height: 350px;
+    }
+    .cases{
+        padding: 20px;
+    }
+    .card{
+        width: 360px;
+        height: 360px;
+    }
+    .pic{
+        width: 300px;
+        height: 300px;
+    }
+    .chartbuttons{
+        width: 120px;
+        height: 60px;
+    }
+}
+
+@media (min-width: 1930px) and (max-width: 2000px) {
+    .image{
+        width: 1500px;
+        height: 900px;
+    }
+    .text, .stat{
+        width: 500px;
+    }
+    .images{
+        align-items: center;
+    }
+    .statbox{
+        width: 600px;
+    }
+    .chart{
+        width: 1450px;
+    }
+    .box{
+        height: 280px;
+    }
+    .cases{
+        padding: 20px;
+    }
+    .card{
+        width: 360px;
+        height: 360px;
+    }
+    .pic{
+        width: 300px;
+        height: 300px;
+    }
+    .chartbuttons{
+        width: 100px;
+        height: 50px;
+    }
+}
+    */
+.months{
+    top: 0%;
+}
+
     </style>
 </head>
 <body>
@@ -670,7 +941,7 @@ body{
             <div class="chartbuttons right" role="button">></div>
         </div> -->
     </div>
-    <script src="./scripts/index.js"></script>
+    <!-- <script src="./scripts/index.js"></script> -->
     <script>
         const imageWidth = parseInt($(".container1 .image").css("width").replace("px", ""));
 const textWidth = parseInt($(".container1 .text").css("width").replace("px", ""));
@@ -798,7 +1069,91 @@ $(window).on("load", ()=>{
     createBox(textArray[monthIndex], monthIndex);
     createContent(contentArray[monthIndex], monthIndex);
     // executeFunctions();
+    assignWidthAndHeight();
 })
+/*
+@media (min-width: 2460px) {
+
+    1500 - 700
+    1100 - 670
+    350 - 670
+    300 - 300
+}
+*/
+
+function assignWidthAndHeight(){
+    const outerWidth = parseInt($(".outer").css("width").split("px")[0].split("\.")[0]);//1500
+    const outerHeight = parseInt($(".outer").css("height").split("px")[0].split("\.")[0]);//700
+
+    const textContainerHeight = (outerHeight/100)*95.71;
+    const imageContainerHeight = (outerHeight/100)*95.71;
+    const imagesHeight = "";
+    const imageHeight = (outerHeight/100)*95.71;
+    const listItemsHeight = (imageContainerHeight/100)*80;
+    const monthsHeight = "";
+    const monthHeight = "";
+    const navigatorHeight = "";
+    const textsHeight = (outerHeight/100)*95.71;
+    const textHeight = "";
+    const boxHeight = "";
+    const statsContainerHeight = "";
+    const chartContainerHeight = "";
+    const statsHeight = "";
+    const statHeight = "";
+    const statBoxHeight = "";
+    const chartsHeight = "";
+    const chartHeight = "";
+    const cardHeight = "";
+    const picHeight = "";
+
+    const textContainerWidth = "";
+    const imageContainerWidth = (outerWidth/100)*73.33;
+    const imagesWidth = "";
+    const imageWidth = (imageContainerWidth/100)*78.13;
+    const listItemsWidth = (imageContainerWidth/100)*70;
+    const monthsWidth = "";
+    const monthWidth = "";
+    const navigatorWidth = "";
+    const textsWidth = (outerWidth/100)*23.33;
+    const textWidth = "";
+    const boxWidth = "";
+    const statsContainerWidth = "";
+    const chartContainerWidth = "";
+    const statsWidth = "";
+    const statWidth = "";
+    const statBoxWidth = "";
+    const chartsWidth = "";
+    const chartWidth = "";
+    const cardWidth = "";
+    const picWidth = "";
+
+    $(".textContainer").css("width", ).css("height", );
+    $(".imageContainer").css("width", ).css("height", );
+    $(".months").css("width", ).css("height", );
+    $(".month").css("width", ).css("height", );
+    $(".images").css("width", ).css("height", );
+    $(".image").css("width", ).css("height", );
+    $(".card").css("width", ).css("height", );
+    $(".image").css("width", imageWidth).css("height", imageHeight);
+    $(".text").css("width", textsWidth).css("height", textsHeight);
+    $(".box").css("width", "").css("height", "");
+    $(".listitems").css("width", listItemsWidth).css("height", listItemsHeight);
+
+    $(".image").css("width", ).css("height", );
+    $(".image").css("width", ).css("height", );
+    $(".image").css("width", ).css("height", );
+    $(".image").css("width", ).css("height", );
+    $(".image").css("width", ).css("height", );
+    $(".image").css("width", ).css("height", );
+    $(".image").css("width", ).css("height", );
+    $(".image").css("width", ).css("height", );
+    $(".image").css("width", ).css("height", );
+    $(".image").css("width", ).css("height", );
+    $(".image").css("width", ).css("height", );
+    $(".image").css("width", ).css("height", );
+    $(".image").css("width", ).css("height", );
+    $(".image").css("width", ).css("height", );
+}
 
 async function executeFunctions() {
   // Call function1 10 times with 2s delay
@@ -1049,9 +1404,38 @@ const statBox = $(".container2 .statbox").first();
 
 //        E X T E R N A L  C O D E
 //external resource
+var height = $(".outer").css("height").split("px")[0].split("\.")[0]
+// var width = $("body").css("width").split("px")[0].split("\.")[0]
+// switch(width){
+//     case "":
+//         height = 1000;
+//         break;
+//     case "":
+//         height = 850;
+//         break;
+//     case "":
+//         height = 1000;
+//         break;
+//     case "":
+//         height = 850;
+//         break;
+//     case "":
+//         height = 1000;
+//         break;
+//     case "":
+//         height = 850;
+//         break;
+//     case "":
+//         height = 1000;
+//         break;
+//     case "":
+//         height = 850;
+//         break;
+// }
+height = (height/100)*80;
 var chartOptions = {
   chart: {
-    height: 600,
+    height: height,
     type: 'line',
     fontFamily: 'Helvetica, Arial, sans-serif',
     foreColor: '#6E729B',
@@ -1131,7 +1515,7 @@ var chartOptions = {
   yaxis: {
     logarithmic: true,
     title: {
-      text: 'Cases count'
+      text: 'power of 10'
     },
     tickAmount: 8,
     labels: {
