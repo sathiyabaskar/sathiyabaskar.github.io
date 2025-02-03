@@ -9,40 +9,6 @@
     
     <title>Document</title>
     <style>
-    /*    :root{
-     --border-light: 1px solid black;
-    --boxes-width: 800px;
-    --box-width: 500px;
-    --upper-height: 150px;
-    --upper-width: 500px;
-    --lower-height:50px;
-    --lower-width: 300px;
-    --flex-direction-column: column;
-    --flex-direction-row: row;
-    --background-color-light: white;
-    --color-light: black;
-    --border-dark: 1px solid white;
-    --background-color-dark: black;
-    --color-dark: white;
-
-    --color-matte-grey: #9B9B9B;
-    --color-matte-black: #343434;
-    --color-matte-black2: #121212;
-    --color-matte-black3: #222222;
-    --color-matte-black4: #2B2B2B;
-    --color-matte-black5: #1C1C1C;
-    --color-matte-beige: #F5D7C6;
-
-    --global-border-radius: 0px;
-    --border-red: 1px solid red;
-
-    --batman-yellow: 1px solid #FFCC00;
-    --batman-black: #000;
-    --image-width: 1100px; 
-
-}
-*/
-
 *, *::before, *::after {
     box-sizing: border-box;
     border-radius: 10px;
@@ -69,37 +35,29 @@ body{
     position: relative;
 }
 .outer{
-    /* width: 1500px; */
-    width: 78.13%;
-    height: 72.16%;
+    width: 1500px;
     /* height: 700px; */
+    aspect-ratio: 15 / 7;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: whitesmoke;
-    /* gap: 15px; */
-    gap: 1%;
-    /* border-radius: 15px; */
-    border-radius: 1%;
+    gap: 15px;
+    border-radius: 15px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
 }
 .imagecontainer{
     position: relative;
     /* width: 1100px; */
     width: 73.33%;
-    /* height: 670px; */
-    height: 95.71%;
+    height: 670px;
     background-color: #9B9B9B;
     display: flex;
     overflow-x: hidden;
-    /* gap: 10px; */
-    align-items: center;
 }
 .textcontainer{
-    /* width: 350px; */
-    width: 23.33%;
-    /* height: 670px; */
-    height: 95.71%;
+    width: 350px;
+    height: 670px;
     background-color: white;
     position: relative;
     display: flex;
@@ -107,40 +65,33 @@ body{
 }
 .months{
     width: 100%;
-    /* height: 50px; */
-    height: 7.14%;
+    height: 50px;
     /* background-color: #222222; */
     display: flex;
     justify-content: center;
     align-items: center;
-    /* gap: 4px; */
-    gap: 0.5%;
+    gap: 4px;
     position: absolute;
     z-index: 1;
-    top: 3%;
 }
 .month{
-    /* width: 45px; */
-    width: 5%;
+    width: 45px;
     height: 5px;
-    /* height: 8%; */
     background-color: rgba(255, 255, 255, 0.25);
-    border-radius: 10%;
+    border-radius: 2px;
 }
 .navigators{
     width: 100%;
-    height: 100%;
     position: absolute;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* top: 25%; */
+    top: 25%;
     padding: 5px;
 }
 .buttons{
-    width: 9.09%;
-    /* height: 335px; */
-    height: 50%;
+    width: 100px;
+    height: 335px;
     background-color: rgba(255, 255, 255, 0.25);
     cursor: pointer;
     color: #fff;
@@ -155,13 +106,13 @@ body{
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
 }
 .images{
-    /* height: 670px; */
-    height: 95.71%;
+    height: inherit;
     display: flex;
-    /* align-items: inherit; */
 }
 .image{
-    width: 1100px;
+    /* width: 1100px; */
+    /* width: 100%; */
+    /* width: inherit; */
     display: flex;
     /* background-color: aliceblue; */
     justify-content: center;
@@ -175,11 +126,9 @@ body{
 .texts{
     height: 100%;
     display: flex;
-    /* width: 100%; */
 }
 .text{
     width: 350px;
-    /* width: 50%; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -214,7 +163,7 @@ body{
 }
 
 .box{
-    width: 57.14%;
+    width: 200px;
     height: 200px;
 }
 .texts .text:nth-child(odd) .box{
@@ -235,12 +184,12 @@ body{
             /* C O N T A I N E R  2  */
 
 .charts{
-    /* height: 670px; */
-    height: 95.71%;
+    height: 670px;
     display: flex;
+    /* width: inherit; */
 }
 .chart{
-    width: 1100px;
+    /* width: var(--image-width); */
     display: flex;
     /* background-color: aliceblue; */
     justify-content: center;
@@ -251,19 +200,15 @@ body{
 }
 .chartcontainer{
     position: relative;
-    /* width: 1100px; */
     width: 73.33%;
-    /* height: 670px; */
-    height: 95.71%;
+    height: 670px;
     background-color: #9B9B9B;
     display: flex;
     overflow-x: hidden;
 }
 .statscontainer{
-    /* width: 350px; */
-    width: 23.33%;
-    /* height: 670px; */
-    height: 95.71%;
+    width: 350px;
+    height: 670px;
     background-color: white;
     position: relative;
     display: flex;
@@ -372,7 +317,7 @@ body{
     backdrop-filter: blur( 18px );
     -webkit-backdrop-filter: blur( 18px );
     border: 1px solid rgba( 255, 255, 255, 0.18 );
-    border-radius: 1%;
+    border-radius: 1rem;
     padding: 1.5rem;
     z-index: 10;
     color: whitesmoke;
@@ -381,7 +326,6 @@ body{
     align-items: center;
     flex-direction: column;
     gap: 5px;
-    /* gap: 10%; */
 }
 .list{
     width: 70%;
@@ -399,8 +343,8 @@ body{
     color: whitesmoke;
 }
 .chartbuttons{
-    width: 60px;
-    height: 30px;
+    width: 70px;
+    height: 40px;
     background-color: rgba(0, 0, 0, 0.75);
     cursor: pointer;
     z-index: 1;
@@ -413,7 +357,6 @@ body{
     text-decoration: none;
     font-size: 1.2em;
     opacity: 0.25;
-    border-radius: 10%;
 }
 
 .chartnavigators{
@@ -530,247 +473,6 @@ body{
 .diffcount{
     font-size: 1.5em;
 }
-
-/*
- @media (min-width: 3840px) {
-
-        .image{
-            width: 2200px;
-            height: 1200px;
-        }
-        .text, .stat{
-            width: 700px;
-        }
-        .images{
-            align-items: center;
-        }
-        .statbox{
-            width: 600px;
-        }
-        .chart{
-            width: 2200px;
-        }
-        .box{
-            height: 400px;
-        }
-        .cases{
-            padding: 20px;
-        }
-        .card{
-            width: 360px;
-            height: 360px;
-        }
-        .pic{
-            width: 300px;
-            height: 300px;
-        }
-        .chartbuttons{
-            width: 120px;
-            height: 60px;
-        }
-    }
-    @media (min-width: 3360px) {
-
-.image{
-    width: 1900px;
-    height: 1200px;
-}
-.text, .stat{
-    width: 600px;
-}
-.images{
-    align-items: center;
-}
-.statbox{
-    width: 600px;
-}
-.chart{
-    width: 1900px;
-}
-.box{
-    height: 350px;
-}
-.cases{
-    padding: 20px;
-}
-.card{
-    width: 300px;
-    height: 300px;
-}
-.pic{
-    width: 275px;
-    height: 275px;
-}
-.chartbuttons{
-    width: 120px;
-    height: 60px;
-}
-.buttons{
-    width: 150px;
-}
-}
-
-@media (min-width: 3200px) {
-    .outer{
-        height: 69.16%;
-    }
-
-.image{
-    width: 1825px;
-    height: 1200px;
-}
-.text, .stat{
-    width: 600px;
-}
-.images{
-    align-items: center;
-}
-.statbox{
-    width: 600px;
-}
-.chart{
-    width: 1800px;
-}
-.box{
-    height: 350px;
-}
-.cases{
-    padding: 20px;
-}
-.card{
-    width: 300px;
-    height: 300px;
-}
-.pic{
-    width: 275px;
-    height: 275px;
-}
-.chartbuttons{
-    width: 120px;
-    height: 60px;
-}
-.buttons{
-    width: 150px;
-}
-}
-
-@media (min-width: 2460px) {
-
-    .image{
-        width: 1450px;
-        height: 1200px;
-    }
-    .text, .stat{
-        width: 480px;
-    }
-    .images{
-        align-items: center;
-    }
-    .statbox{
-        width: 480px;
-    }
-    .chart{
-        width: 1450px;
-    }
-    .box{
-        height: 350px;
-    }
-    .cases{
-        padding: 20px;
-    }
-    .card{
-        width: 360px;
-        height: 360px;
-    }
-    .pic{
-        width: 300px;
-        height: 300px;
-    }
-    .chartbuttons{
-        width: 120px;
-        height: 60px;
-    }
-}
-    
-
-@media (min-width: 2000px) {
-    .image{
-        width: 1850px;
-        height: 1100px;
-    }
-    .text, .stat{
-        width: 600px;
-    }
-    .images{
-        align-items: center;
-    }
-    .statbox{
-        width: 600px;
-    }
-    .chart{
-        width: 1800px;
-    }
-    .box{
-        height: 350px;
-    }
-    .cases{
-        padding: 20px;
-    }
-    .card{
-        width: 360px;
-        height: 360px;
-    }
-    .pic{
-        width: 300px;
-        height: 300px;
-    }
-    .chartbuttons{
-        width: 120px;
-        height: 60px;
-    }
-}
-
-@media (min-width: 1930px) and (max-width: 2000px) {
-    .image{
-        width: 1500px;
-        height: 900px;
-    }
-    .text, .stat{
-        width: 500px;
-    }
-    .images{
-        align-items: center;
-    }
-    .statbox{
-        width: 600px;
-    }
-    .chart{
-        width: 1450px;
-    }
-    .box{
-        height: 280px;
-    }
-    .cases{
-        padding: 20px;
-    }
-    .card{
-        width: 360px;
-        height: 360px;
-    }
-    .pic{
-        width: 300px;
-        height: 300px;
-    }
-    .chartbuttons{
-        width: 100px;
-        height: 50px;
-    }
-}
-    */
-.months{
-    top: 0%;
-}
-
     </style>
 </head>
 <body>
@@ -942,751 +644,772 @@ body{
         </div> -->
     </div>
     <!-- <script src="./scripts/index.js"></script> -->
-    <script>
-        const imageWidth = parseInt($(".container1 .image").css("width").replace("px", ""));
-const textWidth = parseInt($(".container1 .text").css("width").replace("px", ""));
-var monthIndex = 0;
-const progressAnimation = "progress 5s ease-in-out forwards";
-var images = $(".container1 .images")[0];
-const contentArray = $(".container1 .image");
-const textArray = $(".container1 .text");
-var texts = $(".container1 .texts")[0];
-var months = $(".container1 .month");
-const monthCount = months.length;
-var monthColor = "white";
-months[monthIndex].style.backgroundColor = "white";
-// months[monthIndex].style.animation = progressAnimation;
-var imageTranslateXValue = 0;
-var textTranslateXValue = 0;
-const C1LeftButton = $(".container1 .left");
-const C1RighftButton = $(".container1 .right");
-const downArrow = $(".down-arrow");
-
-const introValues = [
-  {
-    title: "IAM-ART",
-  },
-  {
-    title: "UI",
-    values: [
-      "Input validation Framework UI - Selenium",
-      "Sign-up input validation Suite",
-      "Client portal sign-up input Validation",
-      "SAML & Account Recovery automation",
-      "Windows machine support added for test run",
-      "Onpremise Suite",
-      "Conditional Access framework.",
-      "Zvault integration",
-      "ZVoice OTP support for OTP related test automation.",
-      "Ticket and OAuth validation Audit  Automation",
-      "Fetch API for Close account audit - ARM API automation",
-      "OAuth Portal Test Suite",
-    ],
-  },
-  {
-    title: "API",
-    values: [
-      "Thread Local automation (Server & agent)",
-      "Switch service automation",
-      "GeoFencing automation",
-      "Mail Client automation",
-      "API Mail Sending",
-      "MTS test suite",
-      "Portal API Cases new flow revamp",
-      "Malicious input Testing",
-    ],
-  },
-  {
-    title: "New Joinees",
-    values: [
-      "Abinathan",
-      "Suganthi",
-      "Gokul",
-      "DhineshKumar",
-      "Benilin",
-      "Jeffrey",
-    ],
-  },
-  {
-    title: "Tools",
-    values: [
-      "MI Query diff between builds",
-      "CI-CT flow - Accounts",
-      "Master test case document preparation",
-      "Load testing for Onp API & UI - creator team",
-      "New DC deployment testing - AWSCRM, NIC, NCC, SA",
-      "OTP/digest fetch for testing & other services - Aura",
-      "Changenotes tool support for subservices",
-      "Build Update tool - One Team",
-      "PenTest - framework in-progress",
-      "OAuth Security flow exploration in progress",
-      "ART Architecture revamp in-progress",
-    ],
-  },
-  {
-    title: "Major Branches Tested",
-    values: [
-      "payload encryption ",
-      "CSP ",
-      "RTL ",
-      "SRI",
-      "passkey windows support",
-      "Reverse sign-in enforcement",
-      "AR using ZohoApps",
-      "XMLDataConversion",
-    ],
-  },
-  {
-    title: "Bug Bounties-1",
-    values: [
-      "DOS in DCL due to signup validate endpoint",
-      "Possible of DOS in digest pages",
-      "DOS in groups page",
-      "DOS in GroupLogo upload Endpoint",
-      "DOS in profile picture upload",
-      "XSS in MagicLink-Signin Page",
-      "DOS via MFA page in Accounts",
-    ],
-  },
-  {
-    title: "Bug Bounties-2",
-    values: [
-      "DOS in OTP Authenticator Page",
-      "SAML Reauthentication Security Issue",
-      "JWT ID_Token value was exposed in Logs",
-      "Broken access control in user api",
-      "Broken Access Control - Account Take Over",
-      "Unverified Email Signup in Arattai",
-    ]
-  }
-];
-
-let activeSection = null;
-
-$(window).on("load", ()=>{
-    C1RighftButton.css("opacity", "0.5");
-    C2RightButton.css("opacity", "1");
-    createBox(textArray[monthIndex], monthIndex);
-    createContent(contentArray[monthIndex], monthIndex);
-    // executeFunctions();
-    assignWidthAndHeight();
-})
-/*
-@media (min-width: 2460px) {
-
-    1500 - 700
-    1100 - 670
-    350 - 670
-    300 - 300
-}
-*/
-
-function assignWidthAndHeight(){
-    const outerWidth = parseInt($(".outer").css("width").split("px")[0].split("\.")[0]);//1500
-    const outerHeight = parseInt($(".outer").css("height").split("px")[0].split("\.")[0]);//700
-
-    const textContainerHeight = (outerHeight/100)*95.71;
-    const imageContainerHeight = (outerHeight/100)*95.71;
-    const imagesHeight = "";
-    const imageHeight = (outerHeight/100)*95.71;
-    const listItemsHeight = (imageContainerHeight/100)*80;
-    const monthsHeight = "";
-    const monthHeight = "";
-    const navigatorHeight = "";
-    const textsHeight = (outerHeight/100)*95.71;
-    const textHeight = "";
-    const boxHeight = "";
-    const statsContainerHeight = "";
-    const chartContainerHeight = "";
-    const statsHeight = "";
-    const statHeight = "";
-    const statBoxHeight = "";
-    const chartsHeight = "";
-    const chartHeight = "";
-    const cardHeight = "";
-    const picHeight = "";
-
-    const textContainerWidth = "";
-    const imageContainerWidth = (outerWidth/100)*73.33;
-    const imagesWidth = "";
-    const imageWidth = (imageContainerWidth/100)*78.13;
-    const listItemsWidth = (imageContainerWidth/100)*70;
-    const monthsWidth = "";
-    const monthWidth = "";
-    const navigatorWidth = "";
-    const textsWidth = (outerWidth/100)*23.33;
-    const textWidth = "";
-    const boxWidth = "";
-    const statsContainerWidth = "";
-    const chartContainerWidth = "";
-    const statsWidth = "";
-    const statWidth = "";
-    const statBoxWidth = "";
-    const chartsWidth = "";
-    const chartWidth = "";
-    const cardWidth = "";
-    const picWidth = "";
-
-    $(".textContainer").css("width", ).css("height", );
-    $(".imageContainer").css("width", ).css("height", );
-    $(".months").css("width", ).css("height", );
-    $(".month").css("width", ).css("height", );
-    $(".images").css("width", ).css("height", );
-    $(".image").css("width", ).css("height", );
-    $(".card").css("width", ).css("height", );
-    $(".image").css("width", imageWidth).css("height", imageHeight);
-    $(".text").css("width", textsWidth).css("height", textsHeight);
-    $(".box").css("width", "").css("height", "");
-    $(".listitems").css("width", listItemsWidth).css("height", listItemsHeight);
-
-    $(".image").css("width", ).css("height", );
-    $(".image").css("width", ).css("height", );
-    $(".image").css("width", ).css("height", );
-    $(".image").css("width", ).css("height", );
-    $(".image").css("width", ).css("height", );
-    $(".image").css("width", ).css("height", );
-    $(".image").css("width", ).css("height", );
-    $(".image").css("width", ).css("height", );
-    $(".image").css("width", ).css("height", );
-    $(".image").css("width", ).css("height", );
-    $(".image").css("width", ).css("height", );
-    $(".image").css("width", ).css("height", );
-    $(".image").css("width", ).css("height", );
-    $(".image").css("width", ).css("height", );
-}
-
-async function executeFunctions() {
-  // Call function1 10 times with 2s delay
-  await new Promise((resolve) => setTimeout(resolve, 5000)); // 2s delay
-  for (let i = 0; i < 10; i++) {
-    moveRight();
-    if(i<8){
-      await new Promise((resolve) => setTimeout(resolve, 3000)); // 2s delay
-    }
-  }
-
-  // Wait 20 after function1 ends
-  // await new Promise((resolve) => setTimeout(resolve, 2000));
-  downSlide();
-
-  // Call function3 10 times with 2s delay after function2
-  for (let i = 0; i < 10; i++) {
-    moveChartRight();
-    await new Promise((resolve) => setTimeout(resolve, 2000)); // 2s delay
-  }
-}
-
-C1LeftButton.on("click", moveLeft);
-C1RighftButton.on("click", moveRight);
-downArrow.on("click", downSlide);
-
-$(document).on("keydown", (event)=>{
-    if(activeSection == 'container1'){
-        if(event.key == "ArrowLeft"){
-            moveLeft();
-        }else if(event.key == "ArrowRight"){
-            moveRight();
-        }else if(event.key == "ArrowDown"){
-          downSlide();
-        }
-    }else{
-        if(event.key == "ArrowLeft"){
-            moveChartLeft();
-        }else if(event.key == "ArrowRight"){
-            moveChartRight();
-        }
-    }
-});
-
-// Observe which section is in the viewport
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            activeSection = entry.target.id; // Update the active section
-        }
-    });
-}, { threshold: 0.5 }); // At least 50% of the element should be visible
-
-// Start observing sections
-const sections = document.querySelectorAll('.container');
-sections.forEach(section => observer.observe(section));
-
-function downSlide(){
-    window.scrollBy({
-      top: window.innerHeight,
-      behavior: 'smooth'
-    });
-}
-
-function moveRight(){
-    months[monthIndex].style.animation = "";
-    if(monthIndex == monthCount-2){
-        imageTranslateXValue -= imageWidth;
-        textTranslateXValue -= textWidth;
-        monthIndex++;
-        monthColor = "white";
-        C1RighftButton.css("opacity", "0.25");
-    }else if(monthIndex < monthCount-2){
-        imageTranslateXValue -= imageWidth;
-        textTranslateXValue -= textWidth;
-        monthIndex++;
-        monthColor = "white";
-        C1RighftButton.css("opacity", "0.5");
-        C1LeftButton.css("opacity", "0.5");
-    }
-    createBox(textArray[monthIndex], monthIndex);
-    createContent(contentArray[monthIndex], monthIndex);
-
-    images.style.transform = `translateX(${imageTranslateXValue}px)`;
-    texts.style.transform=`translateX(${textTranslateXValue}px)`
-    months[monthIndex].style.backgroundColor = monthColor;
+<script>
+    var imageWidth = parseInt($(".container1 .imagecontainer").css("width").replace("px", ""));
+    const textWidth = parseInt($(".container1 .text").css("width").replace("px", ""));
+    var monthIndex = 0;
+    const progressAnimation = "progress 5s ease-in-out forwards";
+    var images = $(".container1 .images")[0];
+    const contentArray = $(".container1 .image");
+    const textArray = $(".container1 .text");
+    var texts = $(".container1 .texts")[0];
+    var months = $(".container1 .month");
+    const monthCount = months.length;
+    var monthColor = "white";
+    months[monthIndex].style.backgroundColor = "white";
     // months[monthIndex].style.animation = progressAnimation;
-}
+    var imageTranslateXValue = 0;
+    var textTranslateXValue = 0;
+    const C1LeftButton = $(".container1 .left");
+    const C1RighftButton = $(".container1 .right");
+    const downArrow = $(".down-arrow");
 
-function moveLeft(){
-    months[monthIndex].style.animation = "";
-    if(monthIndex == 1){
-        imageTranslateXValue += imageWidth;
-        textTranslateXValue += textWidth;
-        monthColor = "rgba(255, 255, 255, 0.25)";
-        months[monthIndex].style.backgroundColor = monthColor;
-        monthIndex--;
-        C1LeftButton.css("opacity", "0.25");
-        C1RighftButton.css("opacity", "0.5");
-    }
-    if(monthIndex > 0){
-        imageTranslateXValue += imageWidth;
-        textTranslateXValue += textWidth;
-        monthColor = "rgba(255, 255, 255, 0.25)";
-        months[monthIndex].style.backgroundColor = monthColor;
-        monthIndex--;
-        C1RighftButton.css("opacity", "0.5");
-    }
-    images.style.transform=`translateX(${imageTranslateXValue}px)`
-    texts.style.transform=`translateX(${textTranslateXValue}px)`;
-    // months[monthIndex].style.animation = progressAnimation;
-}
+    function syncWidth() {
+      const imgContainer = $('.imagecontainer');
+      const img = $('.image');
 
-// var index = 0;
-function createBox(parent, contentIndex){
-    if(contentIndex <= textArray.length && $(parent).find(".box").length == 0){
-        var box = document.createElement("div");
-        box.innerText = introValues[contentIndex].title;
-        box.classList.add("box");
-        parent.appendChild(box);
+      // Set son's width to grandpa's width
+      img.css("width", imgContainer.css("width") + "px");
+      console.log("image container width", $(".container1 .imagecontainer").css("width"));
+      //imageWidth = parseInt($(".container1 .image").css("width").replace("px", ""));
     }
-}
-// function createContent(parent, contentIndex){
-//     if(contentIndex <= contentArray.length && $(parent).find(".box").length == 0){
-//         var box = document.createElement("div");
-//         var content = introValues[contentIndex].values;
-//         content = (content == undefined || "") ? "Intro" : content
-//         var title = introValues[contentIndex].title;
-//         if(title == "new joinee"){
-//             for(let i=0;i<content.length;i++){
-//                 createNewJoineeBox(parent, contentIndex, content[i]);
-//             }
-//         }else{
-//             box.innerText = content;
-//             box.classList.add("box");
-//             parent.appendChild(box);
-//         }
-//     }
-// }
-function createContent(parent, contentIndex){
-    if(contentIndex <= contentArray.length && $(parent).find(".listitems").length == 0){
-        var listItems = document.createElement("div");
-        var content = introValues[contentIndex].values;
-        content = (content == undefined || "") ? "IAM-ART LookBack - 2024" : content
-        var title = introValues[contentIndex].title;
-        if(title == "New Joinees"){
-            for(let i=0;i<content.length;i++){
-                createNewJoineeBox(parent, contentIndex, content[i]);
+
+    // Create a ResizeObserver to monitor changes in grandpa's width
+    const widthObserver = new ResizeObserver(syncWidth);
+
+    // Observe changes in the grandpa div
+    widthObserver.observe(document.querySelector('.imagecontainer'));
+
+    // Initial sync
+    syncWidth();
+
+    const introValues = [
+    {
+        title: "IAM-ART",
+    },
+    {
+        title: "UI",
+        values: [
+        "Input validation Framework UI - Selenium",
+        "Sign-up input validation Suite",
+        "Client portal sign-up input Validation",
+        "SAML & Account Recovery automation",
+        "Windows machine support added for test run",
+        "Onpremise Suite",
+        "Conditional Access framework.",
+        "Zvault integration",
+        "ZVoice OTP support for OTP related test automation.",
+        "Ticket and OAuth validation Audit  Automation",
+        "Fetch API for Close account audit - ARM API automation",
+        "OAuth Portal Test Suite",
+        ],
+    },
+    {
+        title: "API",
+        values: [
+        "Thread Local automation (Server & agent)",
+        "Switch service automation",
+        "GeoFencing automation",
+        "Mail Client automation",
+        "API Mail Sending",
+        "MTS test suite",
+        "Portal API Cases new flow revamp",
+        "Malicious input Testing",
+        ],
+    },
+    {
+        title: "New Joinees",
+        values: [
+        "Abinathan",
+        "Suganthi",
+        "Gokul",
+        "DhineshKumar",
+        "Benilin",
+        "Jeffrey",
+        ],
+    },
+    {
+        title: "Tools",
+        values: [
+        "MI Query diff between builds",
+        "CI-CT flow - Accounts",
+        "Master test case document preparation",
+        "Load testing for Onp API & UI - creator team",
+        "New DC deployment testing - AWSCRM, NIC, NCC, SA",
+        "OTP/digest fetch for testing & other services - Aura",
+        "Changenotes tool support for subservices",
+        "Build Update tool - One Team",
+        "PenTest - framework in-progress",
+        "OAuth Security flow exploration in progress",
+        "ART Architecture revamp in-progress",
+        ],
+    },
+    {
+        title: "Major Branches Tested",
+        values: [
+        "payload encryption ",
+        "CSP ",
+        "RTL ",
+        "SRI",
+        "passkey windows support",
+        "Reverse sign-in enforcement",
+        "AR using ZohoApps",
+        "XMLDataConversion",
+        ],
+    },
+    {
+        title: "Bug Bounties-1",
+        values: [
+        "DOS in DCL due to signup validate endpoint",
+        "Possible of DOS in digest pages",
+        "DOS in groups page",
+        "DOS in GroupLogo upload Endpoint",
+        "DOS in profile picture upload",
+        "XSS in MagicLink-Signin Page",
+        "DOS via MFA page in Accounts",
+        ],
+    },
+    {
+        title: "Bug Bounties-2",
+        values: [
+        "DOS in OTP Authenticator Page",
+        "SAML Reauthentication Security Issue",
+        "JWT ID_Token value was exposed in Logs",
+        "Broken access control in user api",
+        "Broken Access Control - Account Take Over",
+        "Unverified Email Signup in Arattai",
+        ]
+    }
+    ];
+
+    let activeSection = null;
+
+    $(window).on("load", ()=>{
+        C1RighftButton.css("opacity", "0.5");
+        C2RightButton.css("opacity", "1");
+        createBox(textArray[monthIndex], monthIndex);
+        createContent(contentArray[monthIndex], monthIndex);
+        // executeFunctions();
+        assignWidthAndHeight();
+    })
+    /*
+    @media (min-width: 2460px) {
+
+        1500 - 700
+        1100 - 670
+        350 - 670
+        300 - 300
+    }
+    */
+
+    function assignWidthAndHeight(){
+        const outerWidth = parseInt($(".outer").css("width").split("px")[0].split("\.")[0]);//1500
+        const outerHeight = parseInt($(".outer").css("height").split("px")[0].split("\.")[0]);//700
+
+        const textContainerHeight = (outerHeight/100)*95.71;
+        const imageContainerHeight = (outerHeight/100)*95.71;
+        const imagesHeight = "";
+        const imageHeight = (outerHeight/100)*95.71;
+        const listItemsHeight = (imageContainerHeight/100)*80;
+        const monthsHeight = "";
+        const monthHeight = "";
+        const navigatorHeight = "";
+        const textsHeight = (outerHeight/100)*95.71;
+        const textHeight = "";
+        const boxHeight = "";
+        const statsContainerHeight = "";
+        const chartContainerHeight = "";
+        const statsHeight = "";
+        const statHeight = "";
+        const statBoxHeight = "";
+        const chartsHeight = "";
+        const chartHeight = "";
+        const cardHeight = "";
+        const picHeight = "";
+
+        const textContainerWidth = "";
+        const imageContainerWidth = (outerWidth/100)*73.33;
+        const imagesWidth = "";
+        imageWidth = imageContainerWidth;
+        const listItemsWidth = (imageContainerWidth/100)*70;
+        const monthsWidth = "";
+        const monthWidth = "";
+        const navigatorWidth = "";
+        const textsWidth = (outerWidth/100)*23.33;
+        const textWidth = "";
+        const boxWidth = "";
+        const statsContainerWidth = "";
+        const chartContainerWidth = $(".container2 .chartcontainer").css("width");
+        const statsWidth = "";
+        const statWidth = "";
+        const statBoxWidth = "";
+        const chartsWidth = "";
+        var chartWidth = chartContainerWidth;
+        const cardWidth = "";
+        const picWidth = "";
+
+        // $(".textContainer").css("width", ).css("height", );
+        // $(".imageContainer").css("width", ).css("height", );
+        // $(".months").css("width", ).css("height", );
+        // $(".month").css("width", ).css("height", );
+        // $(".images").css("width", ).css("height", );
+        // $(".image").css("width", ).css("height", );
+        // $(".card").css("width", ).css("height", );
+        $(".image").css("width", imageWidth).css("height", imageHeight);
+        $(".chart").css("width", chartWidth);
+        $(".text").css("width", textsWidth).css("height", textsHeight);
+        $(".box").css("width", "").css("height", "");
+        $(".listitems").css("width", listItemsWidth).css("height", listItemsHeight);
+
+        // $(".image").css("width", ).css("height", );
+        // $(".image").css("width", ).css("height", );
+        // $(".image").css("width", ).css("height", );
+        // $(".image").css("width", ).css("height", );
+        // $(".image").css("width", ).css("height", );
+        // $(".image").css("width", ).css("height", );
+        // $(".image").css("width", ).css("height", );
+        // $(".image").css("width", ).css("height", );
+        // $(".image").css("width", ).css("height", );
+        // $(".image").css("width", ).css("height", );
+        // $(".image").css("width", ).css("height", );
+        // $(".image").css("width", ).css("height", );
+        // $(".image").css("width", ).css("height", );
+        // $(".image").css("width", ).css("height", );
+    }
+
+    async function executeFunctions() {
+    // Call function1 10 times with 2s delay
+    await new Promise((resolve) => setTimeout(resolve, 5000)); // 2s delay
+    for (let i = 0; i < 10; i++) {
+        moveRight();
+        if(i<8){
+        await new Promise((resolve) => setTimeout(resolve, 3000)); // 2s delay
+        }
+    }
+
+    // Wait 20 after function1 ends
+    // await new Promise((resolve) => setTimeout(resolve, 2000));
+    downSlide();
+
+    // Call function3 10 times with 2s delay after function2
+    for (let i = 0; i < 10; i++) {
+        moveChartRight();
+        await new Promise((resolve) => setTimeout(resolve, 2000)); // 2s delay
+    }
+    }
+
+    C1LeftButton.on("click", moveLeft);
+    C1RighftButton.on("click", moveRight);
+    downArrow.on("click", downSlide);
+
+    $(document).on("keydown", (event)=>{
+        if(activeSection == 'container1'){
+            if(event.key == "ArrowLeft"){
+                moveLeft();
+            }else if(event.key == "ArrowRight"){
+                moveRight();
+            }else if(event.key == "ArrowDown"){
+            downSlide();
             }
         }else{
-            listItems.classList.add("listitems");
-            appendList(listItems, content);
-            parent.appendChild(listItems);
+            if(event.key == "ArrowLeft"){
+                moveChartLeft();
+            }else if(event.key == "ArrowRight"){
+                moveChartRight();
+            }
+        }
+    });
+
+    // Observe which section is in the viewport
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                activeSection = entry.target.id; // Update the active section
+            }
+        });
+    }, { threshold: 0.5 }); // At least 50% of the element should be visible
+
+    // Start observing sections
+    const sections = document.querySelectorAll('.container');
+    sections.forEach(section => observer.observe(section));
+
+    function downSlide(){
+        window.scrollBy({
+        top: window.innerHeight,
+        behavior: 'smooth'
+        });
+    }
+
+    function moveRight(){
+        months[monthIndex].style.animation = "";
+        if(monthIndex == monthCount-2){
+            imageTranslateXValue -= imageWidth;
+            textTranslateXValue -= textWidth;
+            monthIndex++;
+            monthColor = "white";
+            C1RighftButton.css("opacity", "0.25");
+        }else if(monthIndex < monthCount-2){
+            imageTranslateXValue -= imageWidth;
+            textTranslateXValue -= textWidth;
+            monthIndex++;
+            monthColor = "white";
+            C1RighftButton.css("opacity", "0.5");
+            C1LeftButton.css("opacity", "0.5");
+        }
+        createBox(textArray[monthIndex], monthIndex);
+        createContent(contentArray[monthIndex], monthIndex);
+
+        images.style.transform = `translateX(${imageTranslateXValue}px)`;
+        texts.style.transform=`translateX(${textTranslateXValue}px)`
+        months[monthIndex].style.backgroundColor = monthColor;
+        // months[monthIndex].style.animation = progressAnimation;
+    }
+
+    function moveLeft(){
+        months[monthIndex].style.animation = "";
+        if(monthIndex == 1){
+            imageTranslateXValue += imageWidth;
+            textTranslateXValue += textWidth;
+            monthColor = "rgba(255, 255, 255, 0.25)";
+            months[monthIndex].style.backgroundColor = monthColor;
+            monthIndex--;
+            C1LeftButton.css("opacity", "0.25");
+            C1RighftButton.css("opacity", "0.5");
+        }
+        if(monthIndex > 0){
+            imageTranslateXValue += imageWidth;
+            textTranslateXValue += textWidth;
+            monthColor = "rgba(255, 255, 255, 0.25)";
+            months[monthIndex].style.backgroundColor = monthColor;
+            monthIndex--;
+            C1RighftButton.css("opacity", "0.5");
+        }
+        images.style.transform=`translateX(${imageTranslateXValue}px)`
+        texts.style.transform=`translateX(${textTranslateXValue}px)`;
+        // months[monthIndex].style.animation = progressAnimation;
+    }
+
+    // var index = 0;
+    function createBox(parent, contentIndex){
+        if(contentIndex <= textArray.length && $(parent).find(".box").length == 0){
+            var box = document.createElement("div");
+            box.innerText = introValues[contentIndex].title;
+            box.classList.add("box");
+            parent.appendChild(box);
         }
     }
-}
+    // function createContent(parent, contentIndex){
+    //     if(contentIndex <= contentArray.length && $(parent).find(".box").length == 0){
+    //         var box = document.createElement("div");
+    //         var content = introValues[contentIndex].values;
+    //         content = (content == undefined || "") ? "Intro" : content
+    //         var title = introValues[contentIndex].title;
+    //         if(title == "new joinee"){
+    //             for(let i=0;i<content.length;i++){
+    //                 createNewJoineeBox(parent, contentIndex, content[i]);
+    //             }
+    //         }else{
+    //             box.innerText = content;
+    //             box.classList.add("box");
+    //             parent.appendChild(box);
+    //         }
+    //     }
+    // }
+    function createContent(parent, contentIndex){
+        if(contentIndex <= contentArray.length && $(parent).find(".listitems").length == 0){
+            var listItems = document.createElement("div");
+            var content = introValues[contentIndex].values;
+            content = (content == undefined || "") ? "IAM-ART LookBack - 2024" : content
+            var title = introValues[contentIndex].title;
+            if(title == "New Joinees"){
+                for(let i=0;i<content.length;i++){
+                    createNewJoineeBox(parent, contentIndex, content[i]);
+                }
+            }else{
+                listItems.classList.add("listitems");
+                appendList(listItems, content);
+                parent.appendChild(listItems);
+            }
+        }
+    }
 
-function appendList(parentList, contents){
-    if(Array.isArray(contents)){
-        for(let i=0;i<contents.length;i++){
+    function appendList(parentList, contents){
+        if(Array.isArray(contents)){
+            for(let i=0;i<contents.length;i++){
+                let list = document.createElement("div");
+                list.classList.add("list");
+                let listdot = document.createElement("div");
+                listdot.innerText = "# ";
+                listdot.classList.add("list-dot");
+                list.appendChild(listdot);
+                list.innerHTML += contents[i];
+                parentList.appendChild(list);
+            }
+        }else{
             let list = document.createElement("div");
-            list.classList.add("list");
-            let listdot = document.createElement("div");
-            listdot.innerText = "# ";
-            listdot.classList.add("list-dot");
-            list.appendChild(listdot);
-            list.innerHTML += contents[i];
-            parentList.appendChild(list);
+                list.classList.add("list");
+                list.innerText = contents;
+                parentList.appendChild(list);
         }
-    }else{
-        let list = document.createElement("div");
-            list.classList.add("list");
-            list.innerText = contents;
-            parentList.appendChild(list);
     }
-}
 
-function createNewJoineeBox(parent, index, content){
-    if($(parent).find(".card").length < 6){
-        var card = document.createElement("div");
-    var pic = document.createElement("div");
-    pic.classList.add("pic");
-    var name = document.createElement("div");
-    name.innerText = content;
-    name.classList.add("nametext");
-    card.appendChild(pic);
-    card.appendChild(name);
-    card.classList.add("card");
-    parent.appendChild(card);
+    function createNewJoineeBox(parent, index, content){
+        if($(parent).find(".card").length < 6){
+            var card = document.createElement("div");
+        var pic = document.createElement("div");
+        pic.classList.add("pic");
+        var name = document.createElement("div");
+        name.innerText = content;
+        name.classList.add("nametext");
+        card.appendChild(pic);
+        card.appendChild(name);
+        card.classList.add("card");
+        parent.appendChild(card);
+        }
     }
-}
 
-// /*
-//      C O N T A I N E R 2   changes
+    // /*
+    //      C O N T A I N E R 2   changes
 
-function toSuperscript(exponent) {
-  const superscripts = ['⁰', '¹', '²', '³', '⁴', '⁵', '⁶', '⁷', '⁸', '⁹'];
-  return String(exponent)
-    .split('')
-    .map((digit) => superscripts[digit] || '') // Map digits to superscripts
-    .join('');
-}
-
-
-const statsValues = [
-    {
-      "Pilot UI":     [1154,   1154,   1255,   1255,   1348,   1361,   1361,   1361,   1361,   1361,   1361,   1361],
-      "Selenium UI":  [0,      62,     62,     62,     62,     5745,   5845,   9695,   9717,   9966,   10036,  10036],
-      "API":          [106589, 106938, 106944, 106944, 112938, 123160, 130344, 128233, 143864, 139028, 139028, 139047],
-      "OAuth":        [717,    717,    717,    717,    717,    1097,   1097,   1097,   1097,   1097,   1097,   1246],
-      "Audit":        [397,    397,    397,    397,    397,    415,    415,    415,    415,    423,    423,    426],
-      "ARM":          [0,      0,      0,      3,      3,      3,      3,      3,      3,      3,      3,      3],
-      "Onp-UI":       [221,    221,    221,    221,    221,    208,    208,    208,    200,    200,    200,    200],
-      "Onp-API":      [105868, 105894, 101940, 101940, 112210, 122418, 129602, 127491, 127491, 137939, 137939, 137958],
-      "MTS":          [18993,  18993,  18993,  18984,  18884,  17984,  15984,  14136,  14136,  14136,  14136,  14136],
-      // "mobile":       [0,      62,     62,     62,     62,     62,     62,     62,     62,     62,     62,     62],
-      // "client":       [0,      0,      0,      0,      0,      5638,   5642,   9492,   9492,   9492,   9492,   9492],
-      // "routing":      [0,      0,      0,      0,      0,      27,     27,     27,     27,     27,     27,     27],
-      // "mail-send":    [0,      0,      0,      0,      0,      7,      7,      7,      7,      7,      7,      7],
-      // "CDP":          [0,      0,      0,      0,      0,      5,      5,      5,      5,      5,      5,      5],
-      // "serv-page":    [0,      0,      0,      0,      0,      3,      3,      3,      3,      3,      3,      3],
-      // "threadloc":    [0,      0,      0,      0,      0,      0,      25,     25,     25,     25,     25,     25],
-      // "proxy":        [0,      0,      0,      0,      0,      0,      3,      3,      3,      3,      3,      3],
-      // "a-reco":       [0,      0,      0,      0,      0,      0,      96,     96,     100,    228,    298,    298],
-      // "pass-sign":    [0,      0,      0,      0,      0,      0,      0,      0,      18,     139,    139,    139]
+    function toSuperscript(exponent) {
+    const superscripts = ['⁰', '¹', '²', '³', '⁴', '⁵', '⁶', '⁷', '⁸', '⁹'];
+    return String(exponent)
+        .split('')
+        .map((digit) => superscripts[digit] || '') // Map digits to superscripts
+        .join('');
     }
-];
 
 
-const chartWidth = parseInt($(".container2 .chart").css("width").replace("px", ""));
-const statsWidth = parseInt($(".container2 .stat").css("width").replace("px", ""));
-var c2MonthIndex = -1;
-const chartAnimation = "chartAnim 2s ease-in-out forwards";
-// var charts = $(".container2 .chart")[1];
-const statsArray = $(".container2 .stat");
-var stats = $(".container2 .stats")[0];
-var c2Months = $(".container2 .month");
-const c2MonthCount = c2Months.length;
-var c2MonthColor = "white";
-c2Months[0].style.backgroundColor = "white";
-// c2Months[0].style.animation = chartAnimation;
-var chartTranslateXValue = -1100;
-var statsIndex = -1;
-const C2LeftButton = $(".container2 .left");
-const C2RightButton = $(".container2 .right");
+    const statsValues = [
+        {
+        "Pilot UI":     [1154,   1154,   1255,   1255,   1348,   1361,   1361,   1361,   1361,   1361,   1361,   1361],
+        "Selenium UI":  [0,      62,     62,     62,     62,     5745,   5845,   9695,   9717,   9966,   10036,  10036],
+        "API":          [106589, 106938, 106944, 106944, 112938, 123160, 130344, 128233, 143864, 139028, 139028, 139047],
+        "OAuth":        [717,    717,    717,    717,    717,    1097,   1097,   1097,   1097,   1097,   1097,   1246],
+        "Audit":        [397,    397,    397,    397,    397,    415,    415,    415,    415,    423,    423,    426],
+        "ARM":          [0,      0,      0,      3,      3,      3,      3,      3,      3,      3,      3,      3],
+        "Onp-UI":       [221,    221,    221,    221,    221,    208,    208,    208,    200,    200,    200,    200],
+        "Onp-API":      [105868, 105894, 101940, 101940, 112210, 122418, 129602, 127491, 127491, 137939, 137939, 137958],
+        "MTS":          [18993,  18993,  18993,  18984,  18884,  17984,  15984,  14136,  14136,  14136,  14136,  14136],
+        // "mobile":       [0,      62,     62,     62,     62,     62,     62,     62,     62,     62,     62,     62],
+        // "client":       [0,      0,      0,      0,      0,      5638,   5642,   9492,   9492,   9492,   9492,   9492],
+        // "routing":      [0,      0,      0,      0,      0,      27,     27,     27,     27,     27,     27,     27],
+        // "mail-send":    [0,      0,      0,      0,      0,      7,      7,      7,      7,      7,      7,      7],
+        // "CDP":          [0,      0,      0,      0,      0,      5,      5,      5,      5,      5,      5,      5],
+        // "serv-page":    [0,      0,      0,      0,      0,      3,      3,      3,      3,      3,      3,      3],
+        // "threadloc":    [0,      0,      0,      0,      0,      0,      25,     25,     25,     25,     25,     25],
+        // "proxy":        [0,      0,      0,      0,      0,      0,      3,      3,      3,      3,      3,      3],
+        // "a-reco":       [0,      0,      0,      0,      0,      0,      96,     96,     100,    228,    298,    298],
+        // "pass-sign":    [0,      0,      0,      0,      0,      0,      0,      0,      18,     139,    139,    139]
+        }
+    ];
 
-const statBox = $(".container2 .statbox").first();
 
-//        E X T E R N A L  C O D E
-//external resource
-var height = $(".outer").css("height").split("px")[0].split("\.")[0]
-// var width = $("body").css("width").split("px")[0].split("\.")[0]
-// switch(width){
-//     case "":
-//         height = 1000;
-//         break;
-//     case "":
-//         height = 850;
-//         break;
-//     case "":
-//         height = 1000;
-//         break;
-//     case "":
-//         height = 850;
-//         break;
-//     case "":
-//         height = 1000;
-//         break;
-//     case "":
-//         height = 850;
-//         break;
-//     case "":
-//         height = 1000;
-//         break;
-//     case "":
-//         height = 850;
-//         break;
-// }
-height = (height/100)*80;
-var chartOptions = {
-  chart: {
-    height: height,
-    type: 'line',
-    fontFamily: 'Helvetica, Arial, sans-serif',
-    foreColor: '#6E729B',
-    toolbar: {
-      show: false,
+    $(".container2 .chart").css("width", $(".container2 .chartcontainer").css("width"));
+    var chartWidth = parseInt($(".container2 .chart").css("width").replace("px", ""));
+    const statsWidth = parseInt($(".container2 .stat").css("width").replace("px", ""));
+    var c2MonthIndex = -1;
+    const chartAnimation = "chartAnim 2s ease-in-out forwards";
+    // var charts = $(".container2 .chart")[1];
+    const statsArray = $(".container2 .stat");
+    var stats = $(".container2 .stats")[0];
+    var c2Months = $(".container2 .month");
+    const c2MonthCount = c2Months.length;
+    var c2MonthColor = "white";
+    c2Months[0].style.backgroundColor = "white";
+    // c2Months[0].style.animation = chartAnimation;
+    var chartTranslateXValue = -1100;
+    var statsIndex = -1;
+    const C2LeftButton = $(".container2 .left");
+    const C2RightButton = $(".container2 .right");
+
+    const statBox = $(".container2 .statbox").first();
+
+    //        E X T E R N A L  C O D E
+    //external resource
+    var height = $(".outer").css("height").split("px")[0].split("\.")[0]
+    // var width = $("body").css("width").split("px")[0].split("\.")[0]
+    // switch(width){
+    //     case "":
+    //         height = 1000;
+    //         break;
+    //     case "":
+    //         height = 850;
+    //         break;
+    //     case "":
+    //         height = 1000;
+    //         break;
+    //     case "":
+    //         height = 850;
+    //         break;
+    //     case "":
+    //         height = 1000;
+    //         break;
+    //     case "":
+    //         height = 850;
+    //         break;
+    //     case "":
+    //         height = 1000;
+    //         break;
+    //     case "":
+    //         height = 850;
+    //         break;
+    // }
+    height = (height/100)*80;
+    var chartOptions = {
+    chart: {
+        height: height,
+        type: 'line',
+        fontFamily: 'Helvetica, Arial, sans-serif',
+        foreColor: '#6E729B',
+        toolbar: {
+        show: false,
+        },
     },
-  },
-  stroke: {
-    curve: 'smooth',
-    width: 2,
-  },
-  series: [
-    {
-      name: 'Pilot-UI',
-      data: [],
+    stroke: {
+        curve: 'smooth',
+        width: 2,
     },
-    {
-      name: 'Selenium-UI',
-      data: [],
-    },
-    {
-      name: 'API',
-      data: [],
-    },
-    {
-      name: 'OAuth',
-      data: []
-    },
-    {
-      name: 'Audit',
-      data: [],
-    },
-    {
-      name: 'ARM',
-      data: [],
-    },
-    {
-      name: 'Onp-UI',
-      data: [],
-    },
-    {
-      name: 'Onp-API',
-      data: []
-    },
-    {
-      name: 'MTS',
-      data: []
-    }
-  ],
-  title: {
-    text: 'Cases-Count',
-    align: 'left',
-    offsetY: 25,
-    offsetX: 5,
-    style: {
-      fontSize: '14px',
-      fontWeight: 'bold',
-      color: '#e5e7eb88',
-    },
-  },
-  markers: {
-    size: 3,
-    strokeWidth: 0,
-    hover: {
-      size: 9,
-    },
-  },
-  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-  xaxis: {
-    tooltip: {
-      enabled: false,
-    },
-    title:{
-      text: 'Jan-24 - Dec-24'
-    }
-  },
-  yaxis: {
-    logarithmic: true,
+    series: [
+        {
+        name: 'Pilot-UI',
+        data: [],
+        },
+        {
+        name: 'Selenium-UI',
+        data: [],
+        },
+        {
+        name: 'API',
+        data: [],
+        },
+        {
+        name: 'OAuth',
+        data: []
+        },
+        {
+        name: 'Audit',
+        data: [],
+        },
+        {
+        name: 'ARM',
+        data: [],
+        },
+        {
+        name: 'Onp-UI',
+        data: [],
+        },
+        {
+        name: 'Onp-API',
+        data: []
+        },
+        {
+        name: 'MTS',
+        data: []
+        }
+    ],
     title: {
-      text: 'power of 10'
+        text: 'Cases-Count',
+        align: 'left',
+        offsetY: 25,
+        offsetX: 5,
+        style: {
+        fontSize: '14px',
+        fontWeight: 'bold',
+        color: '#e5e7eb88',
+        },
     },
-    tickAmount: 8,
-    labels: {
-      formatter: (value) => {
-        const logValue = Math.log10(value);
-        return value.toLocaleString();
-      }
+    markers: {
+        size: 3,
+        strokeWidth: 0,
+        hover: {
+        size: 9,
+        },
     },
-    min: 1,
-    max: 1000000
-  },
-  legend: {
-    position: 'top',
-    horizontalAlign: 'right',
-    offsetY: -10,
-    labels: {
-      colors: '#fffff788',
-    },
-  },
-  grid: {
-    borderColor: '#D9DBF334',
+    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
     xaxis: {
-      lines: {
-        show: true,
-      },
+        tooltip: {
+        enabled: false,
+        },
+        title:{
+        text: 'Jan-24 - Dec-24'
+        }
     },
     yaxis: {
-      lines: {
-        show: true,
-      },
-    },
-    show: true
-  },
-  // colors: ["#008FFB", "#00E396", "#FEB019", "#FF4560", "#775DD0", "#5DB0D0"],
-  // colors: ["#008FFB", "#00E396", "#FEB019", "#FF4560", "#775DD0", '#FF5733', '#33FF57', '#3357FF', '#FF33A1', '#A133FF', '#FFC300', '#33FFF6', '#FF5733', '#DAF7A6', '#900C3F',]
-  colors: ["#008FFB", "#00E396", "#FEB019", "#FF4560", "#775DD0", '#A133FF', '#FFC300', '#33FFF6', '#FF5733', '#DAF7A6', '#900C3F',]
-};
-
-var seriesData = [];
-var lineChart = new ApexCharts(document.querySelector('#line-chart'), chartOptions);
-lineChart.render();
-
-C2LeftButton.on("click", moveChartLeft);
-C2RightButton.on("click", moveChartRight);
-
-showCurrentValues(statsValues, statsIndex);
-// appendData(0);
-// appendData(1);
-moveChartRight();
-moveChartRight();
-
-
-function moveChartRight(){
-  if(c2MonthIndex>=0){
-    c2Months[c2MonthIndex].style.animation = "";
-  }
-    let condition = false;
-    if(c2MonthIndex == c2MonthCount-2){
-        chartTranslateXValue += 100;
-        statsIndex++;
-        c2MonthIndex++;
-        c2MonthColor = "white";
-        C2RightButton.css("opacity", "0.25");
-        condition = true;
-    }else if(c2MonthIndex < c2MonthCount-1){
-        chartTranslateXValue += 100;
-        statsIndex++;
-        c2MonthIndex++;
-        c2MonthColor = "white";
-        C2RightButton.css("opacity", "1");
-        C2LeftButton.css("opacity", "1");
-        condition = true;
-    }
-    // if(c2MonthIndex < c2MonthCount-1){
-    //   showCurrentValues(statsValues, statsIndex);
-    //   appendData(statsIndex);
-    // }
-    if(condition){
-      showCurrentValues(statsValues, statsIndex);
-      appendData(statsIndex);
-    }
-    // charts.style.transform = `translateX(${chartTranslateXValue}px)`;
-    c2Months[c2MonthIndex].style.backgroundColor = c2MonthColor;
-    // c2Months[c2MonthIndex].style.animation = chartAnimation;
-}
-
-function moveChartLeft(){
-    c2Months[c2MonthIndex].style.animation = "";
-    let condition = false;
-    if(c2MonthIndex == 2){
-        chartTranslateXValue -= 100;
-        c2MonthColor = "rgba(255, 255, 255, 0.25)";
-        c2Months[c2MonthIndex].style.backgroundColor = c2MonthColor;
-        c2MonthIndex--;
-        C2LeftButton.css("opacity", "0.25");
-        C2RightButton.css("opacity", "1");
-        condition = true;
-    }else if(c2MonthIndex > 0){
-        chartTranslateXValue -= 100;
-        c2MonthColor = "rgba(255, 255, 255, 0.25)";
-        c2Months[c2MonthIndex].style.backgroundColor = c2MonthColor;
-        c2MonthIndex--;
-        C2RightButton.css("opacity", "1");
-        condition = true;
-    }
-    if(condition){
-      removeData(statsIndex);
-      statsIndex--;
-      showCurrentValues(statsValues, statsIndex);
-    }
-    // charts.style.transform=`translateX(${chartTranslateXValue}px)`
-    // c2Months[c2MonthIndex].style.animation = chartAnimation;
-}
-
-
-function showCurrentValues(statsArray, sIndex){
-    let keys = Object.keys(statsArray[0]);
-    var numbers = $(".numbers");
-    for(let i=0;i<numbers.length;i++){
-        // var oldcount = parseInt($(numbers[i]).find(".casecount").text().replace(/[^0-9]/g, ""));
-        var oldcount = statsArray[0][keys[i]][0];
-        // var oldDiffcount = $(numbers[i]).find(".diffcount").text().replace(/[^0-9]/g, "");
-        // oldDiffcount = oldDiffcount == (undefined || "") ? 0 : oldDiffcount;
-        var newCount = statsArray[0][keys[i]][statsIndex];
-        if(sIndex > 0){
-            var diffCount = (newCount - oldcount);
-            $(numbers[i]).find(".casecount").text("[ " + newCount + " ]");
-            if(diffCount > 0){
-                $(numbers[i]).find(".diffcount").text("+" + diffCount);
-                $(numbers[i]).find(".diffcount").css("color", "greenyellow");
-            }else if(diffCount == 0){
-                $(numbers[i]).find(".diffcount").text("-");
-                $(numbers[i]).find(".diffcount").css("color", "greenyellow");
-            }else{
-                $(numbers[i]).find(".diffcount").text("" + diffCount);
-                $(numbers[i]).find(".diffcount").css("color", "#FF004F");
-            }
-        }else{
-            $(numbers[i]).find(".diffcount").text("-");
-            $(numbers[i]).find(".casecount").text("[ " + newCount + " ]");
+        logarithmic: true,
+        title: {
+        text: 'power of 10'
+        },
+        tickAmount: 8,
+        labels: {
+        formatter: (value) => {
+            const logValue = Math.log10(value);
+            return value.toLocaleString();
         }
-        let initialCount = statsArray[0][keys[i]][0];
-        $(numbers[i]).find(".casecount").text("[ " + initialCount + " ]");
+        },
+        min: 1,
+        max: 1000000
+    },
+    legend: {
+        position: 'top',
+        horizontalAlign: 'right',
+        offsetY: -10,
+        labels: {
+        colors: '#fffff788',
+        },
+    },
+    grid: {
+        borderColor: '#D9DBF334',
+        xaxis: {
+        lines: {
+            show: true,
+        },
+        },
+        yaxis: {
+        lines: {
+            show: true,
+        },
+        },
+        show: true
+    },
+    // colors: ["#008FFB", "#00E396", "#FEB019", "#FF4560", "#775DD0", "#5DB0D0"],
+    // colors: ["#008FFB", "#00E396", "#FEB019", "#FF4560", "#775DD0", '#FF5733', '#33FF57', '#3357FF', '#FF33A1', '#A133FF', '#FFC300', '#33FFF6', '#FF5733', '#DAF7A6', '#900C3F',]
+    colors: ["#008FFB", "#00E396", "#FEB019", "#FF4560", "#775DD0", '#A133FF', '#FFC300', '#33FFF6', '#FF5733', '#DAF7A6', '#900C3F',]
+    };
+
+    var seriesData = [];
+    var lineChart = new ApexCharts(document.querySelector('#line-chart'), chartOptions);
+    lineChart.render();
+
+    C2LeftButton.on("click", moveChartLeft);
+    C2RightButton.on("click", moveChartRight);
+
+    showCurrentValues(statsValues, statsIndex);
+    // appendData(0);
+    // appendData(1);
+    moveChartRight();
+    moveChartRight();
+
+
+    function moveChartRight(){
+    if(c2MonthIndex>=0){
+        c2Months[c2MonthIndex].style.animation = "";
     }
-}
-
-
-  
-function appendData(index){
-  let keys = Object.keys(statsValues[0]);
-  let series = [];
-  keys.forEach((key, position) =>{
-    let value = statsValues[0][key][index];
-    let obj = {data: [value]}
-    series.push(obj);
-    if(seriesData[position] == undefined){
-      seriesData[position] = {data: []};
+        let condition = false;
+        if(c2MonthIndex == c2MonthCount-2){
+            chartTranslateXValue += 100;
+            statsIndex++;
+            c2MonthIndex++;
+            c2MonthColor = "white";
+            C2RightButton.css("opacity", "0.25");
+            condition = true;
+        }else if(c2MonthIndex < c2MonthCount-1){
+            chartTranslateXValue += 100;
+            statsIndex++;
+            c2MonthIndex++;
+            c2MonthColor = "white";
+            C2RightButton.css("opacity", "1");
+            C2LeftButton.css("opacity", "1");
+            condition = true;
+        }
+        // if(c2MonthIndex < c2MonthCount-1){
+        //   showCurrentValues(statsValues, statsIndex);
+        //   appendData(statsIndex);
+        // }
+        if(condition){
+        showCurrentValues(statsValues, statsIndex);
+        appendData(statsIndex);
+        }
+        // charts.style.transform = `translateX(${chartTranslateXValue}px)`;
+        c2Months[c2MonthIndex].style.backgroundColor = c2MonthColor;
+        // c2Months[c2MonthIndex].style.animation = chartAnimation;
     }
-    seriesData[position].data.push(value);
-  })
-  // lineChart.appendData(series);
-  lineChart.updateSeries(seriesData);
-}
 
-function removeData(index){
-  let keys = Object.keys(statsValues[0]);
-  for(let i=0;i<keys.length;i++){
-    seriesData[i].data.pop(index);
-  }
-  lineChart.updateSeries(seriesData);
-}
-    </script>
+    function moveChartLeft(){
+        c2Months[c2MonthIndex].style.animation = "";
+        let condition = false;
+        if(c2MonthIndex == 2){
+            chartTranslateXValue -= 100;
+            c2MonthColor = "rgba(255, 255, 255, 0.25)";
+            c2Months[c2MonthIndex].style.backgroundColor = c2MonthColor;
+            c2MonthIndex--;
+            C2LeftButton.css("opacity", "0.25");
+            C2RightButton.css("opacity", "1");
+            condition = true;
+        }else if(c2MonthIndex > 0){
+            chartTranslateXValue -= 100;
+            c2MonthColor = "rgba(255, 255, 255, 0.25)";
+            c2Months[c2MonthIndex].style.backgroundColor = c2MonthColor;
+            c2MonthIndex--;
+            C2RightButton.css("opacity", "1");
+            condition = true;
+        }
+        if(condition){
+        removeData(statsIndex);
+        statsIndex--;
+        showCurrentValues(statsValues, statsIndex);
+        }
+        // charts.style.transform=`translateX(${chartTranslateXValue}px)`
+        // c2Months[c2MonthIndex].style.animation = chartAnimation;
+    }
+
+
+    function showCurrentValues(statsArray, sIndex){
+        let keys = Object.keys(statsArray[0]);
+        var numbers = $(".numbers");
+        for(let i=0;i<numbers.length;i++){
+            // var oldcount = parseInt($(numbers[i]).find(".casecount").text().replace(/[^0-9]/g, ""));
+            var oldcount = statsArray[0][keys[i]][0];
+            // var oldDiffcount = $(numbers[i]).find(".diffcount").text().replace(/[^0-9]/g, "");
+            // oldDiffcount = oldDiffcount == (undefined || "") ? 0 : oldDiffcount;
+            var newCount = statsArray[0][keys[i]][statsIndex];
+            if(sIndex > 0){
+                var diffCount = (newCount - oldcount);
+                $(numbers[i]).find(".casecount").text("[ " + newCount + " ]");
+                if(diffCount > 0){
+                    $(numbers[i]).find(".diffcount").text("+" + diffCount);
+                    $(numbers[i]).find(".diffcount").css("color", "greenyellow");
+                }else if(diffCount == 0){
+                    $(numbers[i]).find(".diffcount").text("-");
+                    $(numbers[i]).find(".diffcount").css("color", "greenyellow");
+                }else{
+                    $(numbers[i]).find(".diffcount").text("" + diffCount);
+                    $(numbers[i]).find(".diffcount").css("color", "#FF004F");
+                }
+            }else{
+                $(numbers[i]).find(".diffcount").text("-");
+                $(numbers[i]).find(".casecount").text("[ " + newCount + " ]");
+            }
+            let initialCount = statsArray[0][keys[i]][0];
+            $(numbers[i]).find(".casecount").text("[ " + initialCount + " ]");
+        }
+    }
+
+
+    
+    function appendData(index){
+    let keys = Object.keys(statsValues[0]);
+    let series = [];
+    keys.forEach((key, position) =>{
+        let value = statsValues[0][key][index];
+        let obj = {data: [value]}
+        series.push(obj);
+        if(seriesData[position] == undefined){
+        seriesData[position] = {data: []};
+        }
+        seriesData[position].data.push(value);
+    })
+    // lineChart.appendData(series);
+    lineChart.updateSeries(seriesData);
+    }
+
+    function removeData(index){
+    let keys = Object.keys(statsValues[0]);
+    for(let i=0;i<keys.length;i++){
+        seriesData[i].data.pop(index);
+    }
+    lineChart.updateSeries(seriesData);
+    }
+</script>
 </body>
 </html>
