@@ -2,7 +2,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="css/index.css"> -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -12,8 +11,6 @@
 *, *::before, *::after {
     box-sizing: border-box;
     border-radius: 10px;
-    /* font-family: 'Poppins',sans-serif; */
-    /* font-size: 1.2em; */
   }
 
 body{
@@ -22,11 +19,11 @@ body{
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 200vh;
+    /* height: 300vh; */
     overflow-x: hidden;
     flex-direction: column;
 }
-.container1, .container2{
+.container1, .container2, .container3{
     width: 100%;
     height: 100vh;
     display: flex;
@@ -473,6 +470,235 @@ body{
 .diffcount{
     font-size: 1.5em;
 }
+
+.container3{
+    height: auto;
+}
+.roadmap-container{
+    width: 80%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.roadmap-outer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    padding: 50px;
+}
+.roadmap{
+    width: 700px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    gap: 15px;
+    padding-top: 20px;
+}
+.roadmaptext{
+    background-color: #569ad0;
+    color: aliceblue;
+    padding: 10px;
+    border-radius: 5px;
+}
+.roadmap-icon{
+    width: 100px;
+    height: auto;
+}
+.roadmap-box{
+    width: 700px;
+    height: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.title{
+    width: 100%;
+    height: 60px;
+}
+.icon{
+    width: 50px;
+    height: 50px;
+    background-image: url("./images/gitlab.png");
+}
+.content{
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.roadmap-box{
+    background-color: #f4f4f6;
+}
+.api{
+    content: url("./images/api.png");
+}
+img{
+    width: 50px;
+    height: auto;
+}
+.title{
+    font-size: 2em;
+    font-weight: bolder;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header{
+    background-color: #dadfe8;
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+.docker{
+    content: url("images/docker.png");
+}
+.cache{
+    content: url("images/cache.png");
+}
+.crossbrowser{
+    content: url("images/cross_browser.png");
+}
+.codecoverage{
+    content: url("images/codecoverage.png");
+}
+.selenium{
+    content: url("images/selenium.png");
+}
+.cict{
+    content: url("images/github.png");
+}
+.selfheal{
+    content: url("images/healing.png");
+}
+.hotfix{
+    content: url("images/hotfix.png");
+}
+.crossdc{
+    content: url("images/crossdc.png");
+}
+.dcsuite{
+    content: url("./images/build_centralize.png");
+}
+.uireport, .report{
+    content: url("./images/reports.png");
+}
+.acl{
+    content: url("./images/acl.png");
+}
+.kubernetes{
+    content: url("./images/kubernetes.png");
+}
+.dcl{
+    content: url("images/DCL.png");
+}
+.sql-redis{
+    content: url("./images/analysis.png");
+}
+.redis{
+    content: url("./images/redis.png");
+}
+.iprestriction{
+    content: url("./images/ip_block.png");
+}
+.portal{
+    content: url("./images/portal.png");
+}
+.onp{
+    content: url("./images/onp.png");
+}
+.arm{
+    content: url("./images/kafka.png");
+}
+.oauth{
+    content: url("./images/Oauth.png");
+}
+.mts{
+    content: url("./images/mts.png");
+}
+.mailsending{
+    content: url("./images/mailsending.png");
+}
+.mobile{
+    content: url("./images/mobile.png");
+}
+.contacts{
+    content: url("./images/contacts.png");
+}
+.aoc{
+    content: url("./images/aoc.png");
+}
+.subservice{
+    content: url("./images/subservice.png");
+}
+.impact{
+    content: url("./images/impact.png");
+}
+.sampling{
+    content: url("./images/sampling.png");
+}
+.profiling{
+    content: url("./images/memory-profiling.png");
+}
+.agent{
+    content: url("images/verify.png");
+}
+.optimize{
+    content: url("./images/mysql.png");
+}
+.restrict{
+    content: url("./images/roadblock.png");
+}
+.pentest{
+    content: url("./images/hacker.png");
+}
+.build{
+    content: url("./images/build_centralize.png");
+}
+.DPIA{
+    content: url("./images/dpia.png");
+}
+.dashboard{
+    content: url("./images/dashboard.png");
+}
+.monitor{
+    content: url("./images/monitor.png");
+}
+.milestone{
+    content: url("./images/milestone.png");
+}
+.grid{
+    content: url("./images/grid.png");
+}
+.roadmap-stats{
+    content: url("images/stats.png");
+}
+.ui-icon{
+    content: url("./images/ui-icon.png");
+}
+.api-icon{
+    content: url("./images/api-icon.png");
+}
+.build-icon{
+    content: url("./images/build-icon.png");
+}
+.others-icon{
+    content: url("./images/others-icon.png");
+}
+.tools-icon{
+    content: url("images/tools-icon.png");
+}
     </style>
 </head>
 <body>
@@ -620,17 +846,6 @@ body{
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="chart">SLIDER</div> -->
-                    <!-- <div class="image"></div>
-                    <div class="image"></div>
-                    <div class="image"></div>
-                    <div class="image"></div>
-                    <div class="image"></div>
-                    <div class="image"></div>
-                    <div class="image"></div>
-                    <div class="image"></div>
-                    <div class="image"></div>
-                    <div class="image"></div> -->
                 </div>
                 <div class="chartnavigators">
                     <div class="chartbuttons left"><</div>
@@ -638,12 +853,227 @@ body{
                 </div>
             </div>
         </div>
-        <!-- <div class="chartnavigators">
-            <div class="chartbuttons left"><</div>
-            <div class="chartbuttons right" role="button">></div>
-        </div> -->
     </div>
-    <!-- <script src="./scripts/index.js"></script> -->
+    <div class="roadmap-container container3" id="container3">
+        
+        <div class="roadmap">
+            <img src="./images/roadmap-icon.png" class="roadmap-icon">
+            <div class="roadmaptext">IAM-ART RoadMap 2025</div>
+        </div>
+        <div class="roadmap-outer">
+            <div class="roadmap-box">
+                <div class="title">
+                    <img src="images/ui.png" alt="" class="ui-icon" class="ui-icon">
+                    <div class="header">UI</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="docker icon">
+                    <div class="roadmap-text">Docker for UI</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon crossbrowser">
+                    <div class="roadmap-text">Cross Browser & platform</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon codecoverage">
+                    <div class="roadmap-text">Code coverage - Client</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon selenium">
+                    <div class="roadmap-text">Selenium framework</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon cict">
+                    <div class="roadmap-text">CI-CT UI</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon selfheal">
+                    <div class="roadmap-text">Self-Heal UI Cases</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon hotfix">
+                    <div class="roadmap-text">Hotfix UI-Suite</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon crossdc">
+                    <div class="roadmap-text">crossDC in local</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon dcsuite">
+                    <div class="roadmap-text">DC Specific suite</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon uireport">
+                    <div class="roadmap-text">UI selenium report</div>
+                </div>
+            </div>
+            <div class="roadmap-box">
+                <div class="title">
+                    <img src="images/api.png" alt="" class="api-icon">
+                    <div class="header">API</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="cache icon">
+                    <div class="roadmap-text">CacheClearance</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon docker">
+                    <div class="roadmap-text">Accounts in Docker</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon acl">
+                    <div class="roadmap-text">ACL framework</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon kubernetes">
+                    <div class="roadmap-text">Kubernetes</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon sql-redis">
+                    <div class="roadmap-text">SQl & Redis analysis</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon cache redis">
+                    <div class="roadmap-text">Agentcache delete & update</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon api">
+                    <div class="roadmap-text">API with cache</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon iprestriction">
+                    <div class="roadmap-text">IP restriction in API</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon portal">
+                    <div class="roadmap-text">ClientPortal flow</div>
+                </div>
+            </div>
+            <div class="roadmap-box">
+                <div class="title">
+                    <img src="images/cache.png" alt="" class="others-icon">
+                    <div class="header">Others</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon onp">
+                    <div class="roadmap-text">Onp API & UI</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon arm">
+                    <div class="roadmap-text">ARM & Audit</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon oauth">
+                    <div class="roadmap-text">OAuth</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon mts">
+                    <div class="roadmap-text">MTS</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon mailsending">
+                    <div class="roadmap-text">Mail Sending</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon mobile">
+                    <div class="roadmap-text">Mobile-Browser</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon portal">
+                    <div class="roadmap-text">Client Portal</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon contacts">
+                    <div class="roadmap-text">IAM-Contacts revamp</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon dcl">
+                    <div class="roadmap-text">DCL</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon aoc">
+                    <div class="roadmap-text">AOC</div>
+                </div>
+            </div>
+            <div class="roadmap-box">
+                <div class="title">
+                    <div class="icon"></div>
+                    <img src="images/acl.png" alt="" class="tools-icon">
+                    <div class="header">TOOLS</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="docker subservice">
+                    <div class="roadmap-text">SubService automation</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon impact">
+                    <div class="roadmap-text">Impact for SubService</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon sampling">
+                    <div class="roadmap-text">API Sampling</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon profiling">
+                    <div class="roadmap-text">Memory & Code Profiling</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon agent">
+                    <div class="roadmap-text">Collections read & write verification at agent side</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon optimize">
+                    <div class="roadmap-text">Query optimization</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon restrict">
+                    <div class="roadmap-text">Role restriction</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon pentest">
+                    <div class="roadmap-text">PenTesting Tool</div>
+                </div>
+            </div>
+            <div class="roadmap-box">
+                <div class="title">
+                    <img src="images/build-icon.png" alt="" class="build-icon">
+                    <div class="header">BUILD PROCESS</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="docker build">
+                    <div class="roadmap-text">Build update centralize</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon grid">
+                    <div class="roadmap-text">Build update in sub-grid</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon DPIA">
+                    <div class="roadmap-text">DPIA sync - subteams</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon dashboard">
+                    <div class="roadmap-text">Build Dashboard</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon monitor">
+                    <div class="roadmap-text">Health monitor</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon roadmap-stats">
+                    <div class="roadmap-text">Build & Automation stats</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon report">
+                    <div class="roadmap-text">Report Summary</div>
+                </div>
+                <div class="content">
+                    <img src="images/image.png" class="icon milestone">
+                    <div class="roadmap-text">Milestone docker image</div>
+                </div>
+            </div>
+        </div> 
+    </div> 
 <script>
     var imageWidth = parseInt($(".container1 .imagecontainer").css("width").replace("px", ""));
     const textWidth = parseInt($(".container1 .text").css("width").replace("px", ""));
@@ -668,19 +1098,12 @@ body{
       const imgContainer = $('.imagecontainer');
       const img = $('.image');
 
-      // Set son's width to grandpa's width
       img.css("width", imgContainer.css("width") + "px");
       console.log("image container width", $(".container1 .imagecontainer").css("width"));
-      //imageWidth = parseInt($(".container1 .image").css("width").replace("px", ""));
     }
-
-    // Create a ResizeObserver to monitor changes in grandpa's width
     const widthObserver = new ResizeObserver(syncWidth);
 
-    // Observe changes in the grandpa div
     widthObserver.observe(document.querySelector('.imagecontainer'));
-
-    // Initial sync
     syncWidth();
 
     const introValues = [
@@ -792,15 +1215,6 @@ body{
         // executeFunctions();
         assignWidthAndHeight();
     })
-    /*
-    @media (min-width: 2460px) {
-
-        1500 - 700
-        1100 - 670
-        350 - 670
-        300 - 300
-    }
-    */
 
     function assignWidthAndHeight(){
         const outerWidth = parseInt($(".outer").css("width").split("px")[0].split("\.")[0]);//1500
@@ -848,54 +1262,32 @@ body{
         const cardWidth = "";
         const picWidth = "";
 
-        // $(".textContainer").css("width", ).css("height", );
-        // $(".imageContainer").css("width", ).css("height", );
-        // $(".months").css("width", ).css("height", );
-        // $(".month").css("width", ).css("height", );
-        // $(".images").css("width", ).css("height", );
-        // $(".image").css("width", ).css("height", );
-        // $(".card").css("width", ).css("height", );
         $(".image").css("width", imageWidth).css("height", imageHeight);
         $(".chart").css("width", chartWidth);
         $(".text").css("width", textsWidth).css("height", textsHeight);
         $(".box").css("width", "").css("height", "");
         $(".listitems").css("width", listItemsWidth).css("height", listItemsHeight);
-
-        // $(".image").css("width", ).css("height", );
-        // $(".image").css("width", ).css("height", );
-        // $(".image").css("width", ).css("height", );
-        // $(".image").css("width", ).css("height", );
-        // $(".image").css("width", ).css("height", );
-        // $(".image").css("width", ).css("height", );
-        // $(".image").css("width", ).css("height", );
-        // $(".image").css("width", ).css("height", );
-        // $(".image").css("width", ).css("height", );
-        // $(".image").css("width", ).css("height", );
-        // $(".image").css("width", ).css("height", );
-        // $(".image").css("width", ).css("height", );
-        // $(".image").css("width", ).css("height", );
-        // $(".image").css("width", ).css("height", );
     }
 
     async function executeFunctions() {
-    // Call function1 10 times with 2s delay
-    await new Promise((resolve) => setTimeout(resolve, 5000)); // 2s delay
-    for (let i = 0; i < 10; i++) {
-        moveRight();
-        if(i<8){
-        await new Promise((resolve) => setTimeout(resolve, 3000)); // 2s delay
+        // Call function1 10 times with 2s delay
+        await new Promise((resolve) => setTimeout(resolve, 5000)); // 2s delay
+        for (let i = 0; i < 10; i++) {
+            moveRight();
+            if(i<8){
+            await new Promise((resolve) => setTimeout(resolve, 3000)); // 2s delay
+            }
         }
-    }
 
-    // Wait 20 after function1 ends
-    // await new Promise((resolve) => setTimeout(resolve, 2000));
-    downSlide();
+        // Wait 20 after function1 ends
+        // await new Promise((resolve) => setTimeout(resolve, 2000));
+        downSlide();
 
-    // Call function3 10 times with 2s delay after function2
-    for (let i = 0; i < 10; i++) {
-        moveChartRight();
-        await new Promise((resolve) => setTimeout(resolve, 2000)); // 2s delay
-    }
+        // Call function3 10 times with 2s delay after function2
+        for (let i = 0; i < 10; i++) {
+            moveChartRight();
+            await new Promise((resolve) => setTimeout(resolve, 2000)); // 2s delay
+        }
     }
 
     C1LeftButton.on("click", moveLeft);
@@ -1385,8 +1777,6 @@ body{
         }
     }
 
-
-    
     function appendData(index){
     let keys = Object.keys(statsValues[0]);
     let series = [];
